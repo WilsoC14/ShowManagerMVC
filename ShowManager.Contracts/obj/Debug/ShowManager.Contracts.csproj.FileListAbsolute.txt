@@ -1,0 +1,16 @@
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\ShowManager.Contracts.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\ShowManager.Contracts.pdb
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\obj\Debug\ShowManager.Contracts.csprojAssemblyReference.cache
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\obj\Debug\ShowManager.Contracts.csproj.CoreCompileInputs.cache
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\obj\Debug\ShowManager.Contracts.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\obj\Debug\ShowManager.Contracts.pdb
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\ShowManager.Contracts.dll.config
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\EntityFramework.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\EntityFramework.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\EntityFramework.SqlServer.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Contracts\obj\Debug\ShowManager.Contracts.csproj.CopyComplete

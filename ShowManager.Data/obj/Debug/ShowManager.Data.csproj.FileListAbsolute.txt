@@ -1,0 +1,16 @@
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.csprojAssemblyReference.cache
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.csproj.CoreCompileInputs.cache
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\ShowManager.Data.dll.config
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\ShowManager.Data.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\ShowManager.Data.pdb
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\EntityFramework.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\EntityFramework.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.csproj.CopyComplete
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.pdb
