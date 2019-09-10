@@ -1,0 +1,1 @@
+To be a foreign key, you must have the key's as a property within the class that is referencing it.
