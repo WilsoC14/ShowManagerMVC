@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShowManager.Data\ShowManager.Data.csproj">
+      <Project>{20593BE3-9C5C-4D06-8074-3FE787212DE0}</Project>
+      <Name>ShowManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShowManager.Models\ShowManager.Models.csproj">
+      <Project>{87D6585C-A498-4417-860F-FA52EECB5665}</Project>
+      <Name>ShowManager.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

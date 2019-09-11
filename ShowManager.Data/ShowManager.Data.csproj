@@ -54,12 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist.cs" />
+    <Compile Include="ArtistVenueShowData.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201909112233501_InitialMigration.cs" />
+    <Compile Include="Migrations\201909112233501_InitialMigration.Designer.cs">
+      <DependentUpon>201909112233501_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909112315147_AddedGuidToArtist.cs" />
+    <Compile Include="Migrations\201909112315147_AddedGuidToArtist.Designer.cs">
+      <DependentUpon>201909112315147_AddedGuidToArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Show.cs" />
+    <Compile Include="Venue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909112233501_InitialMigration.resx">
+      <DependentUpon>201909112233501_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909112315147_AddedGuidToArtist.resx">
+      <DependentUpon>201909112315147_AddedGuidToArtist.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

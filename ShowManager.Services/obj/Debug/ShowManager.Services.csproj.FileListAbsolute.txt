@@ -14,3 +14,9 @@ C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\obj\Debug\ShowManager.Services.csproj.CopyComplete
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Data.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Models.dll
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Data.pdb
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Data.dll.config
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Models.pdb
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Services\bin\Debug\ShowManager.Models.dll.config

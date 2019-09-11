@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Data
 {
-    class Artist
+   public class Artist
     {
+        public Guid UserID { get; set; }
         [Key]
         public int ArtistID { get; set; }
         public string ArtistName { get; set; }
         public bool IsHeadliner { get; set; }
+        public string Location { get; set; }
+
         
 
     }
