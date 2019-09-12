@@ -16,6 +16,24 @@ namespace ShowManager.Services
             _userID = userID;
         }
 
+        public bool CreateArtist(ArtistCreate model)
+        {
+            var entity = new Artist()
+            {
+                UserID = _userID,
+                ArtistName = model.ArtistName,
+                Location = model.Location
+            };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Artists.Add(entity);
+                return ctx.SaveChanges() == 1;
+
+            }
+
+
+        }
         public IEnumerable<ArtistListItem> GetArtists()
         {
             using (var ctx = new ApplicationDbContext())

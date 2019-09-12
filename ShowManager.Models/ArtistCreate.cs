@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Models
 {
-    class ArtistCreate
+    public class ArtistCreate
     {
+        public string ArtistName { get; set; }
+        public string Location { get; set; }
     }
 }
