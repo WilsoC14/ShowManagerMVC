@@ -1,1 +1,1 @@
-Guid for Artists UserID
+Guid for Artists UserID - added... will use a GUID for all users

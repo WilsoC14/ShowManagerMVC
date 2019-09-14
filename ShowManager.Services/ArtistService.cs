@@ -16,6 +16,7 @@ namespace ShowManager.Services
             _userID = userID;
         }
 
+        //Crud
         public bool CreateArtist(ArtistCreate model)
         {
             var entity = new Artist()
@@ -34,6 +35,22 @@ namespace ShowManager.Services
 
 
         }
+
+        //crUd
+        public bool UpdateArtist(ArtistEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Artists.Single(e => e.ArtistID == model.ArtistID);
+                entity.ArtistName = model.ArtistName;
+                entity.Location = model.Location;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+
+        //Helper
         public IEnumerable<ArtistListItem> GetArtists()
         {
             using (var ctx = new ApplicationDbContext())
@@ -43,15 +60,57 @@ namespace ShowManager.Services
                                .Select(
                                    e => new ArtistListItem
                                    {
+                                       ArtistID = e.ArtistID,
                                        ArtistName = e.ArtistName,
                                        Location = e.Location
                                    }
                                    );
-                return query.ToArray();
-                    }
+                return query.ToList();
+            }
 
         }
+
+
+        //Helper
+        public Artist GetArtistByName(string artistName)
+        {
+            var listOfArtists = GetArtists();
+            foreach (var artistListItem in listOfArtists)
+            {
+                if (artistListItem.ArtistName == artistName)
+                {
+                    var artist = new Artist
+                    {
+                        ArtistID = artistListItem.ArtistID,
+                    };
+                    return artist;
+                }
+            }
+            return null;
+        }
+
+
+        //Helper
+        public ArtistDetail GetArtistByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Artists
+                        .Single(e => e.ArtistID == id);
+                return  //Having the return above the new note is different from other methods I've seen
+                    new ArtistDetail
+                    {
+                        ArtistID = entity.ArtistID,
+                        ArtistName = entity.ArtistName,
+                        Location = entity.Location
+                       
+                    };
+            }
+        }
     }
-
-
 }
+
+
+

@@ -17,6 +17,7 @@ namespace ShowManager.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ArtistService(userID);
+            // changed GetArtists return type from Array to List... still Ienumerable
             var model = service.GetArtists();
             return View(model);
         }
@@ -39,7 +40,7 @@ namespace ShowManager.Controllers
 
             }
            var service =CreateArtistService();
-            service.CreateArtist(model);
+            
 
             if (service.CreateArtist(model))
             {
@@ -51,6 +52,58 @@ namespace ShowManager.Controllers
             return View(model);
 
         }
+
+        //Get: Edit
+        
+            public ActionResult Edit (int id)
+        {
+            var service = CreateArtistService();
+            var artist = service.GetArtistByID(id);
+            var model =
+                        new ArtistEdit
+                        {
+                            ArtistID = artist.ArtistID,
+                            ArtistName = artist.ArtistName,
+                            Location = artist.Location
+                        };
+            return View(model);
+        }
+
+        //Post: Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit (string artistName, ArtistEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            if (model.ArtistName != artistName) ;
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateArtistService();
+            if (service.UpdateArtist(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Artist could not be updated.");
+            return View();
+        }
+
+        
+
+
+
+
+
+
+
+
+
 
         private ArtistService CreateArtistService()
         {

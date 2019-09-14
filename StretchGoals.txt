@@ -1,0 +1,3 @@
+Add List of members to Artists class for multiple person artists
+
+Look for "Did you mean this" code for mispelled artists/Venues/Shows

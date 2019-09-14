@@ -8,6 +8,7 @@ namespace ShowManager.Models
 {
     public class ArtistListItem
     {
+        public int ArtistID { get; set; }
         public string ArtistName { get; set; }
         public string Location { get; set; }
     }

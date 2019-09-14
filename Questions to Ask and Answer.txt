@@ -1,1 +1,6 @@
 To be a foreign key, you must have the key's as a property within the class that is referencing it.
+
+
+May need to create a ShowArtist class with IsHeadliner property as opposed to IsHeadliner to be a property of Artist
+
+May need to have line similar to: .Single(e => e.NoteId == id && e.OwnerId == _userId); when querying _db so that only the Artist Logged in can edit it's information. same goes for venues & similar for shows... 
