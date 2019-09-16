@@ -48,6 +48,20 @@ namespace ShowManager.Services
             }
         }
 
+        //cruD
+        
+        public bool DeleteArtist(int artistId)  //User Role... don't think _userID is needed
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Artists
+                        .Single(e => e.ArtistID == artistId);
+                ctx.Artists.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
         //Helper

@@ -72,13 +72,13 @@ namespace ShowManager.Controllers
         //Post: Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (string artistName, ArtistEdit model)
+        public ActionResult Edit (int id, ArtistEdit model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            if (model.ArtistName != artistName) ;
+            if (model.ArtistID != id) 
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -94,15 +94,35 @@ namespace ShowManager.Controllers
             return View();
         }
 
+
+        //Get Delete
+        [ActionName("Delete")]
+        public ActionResult Delete (int id)
+        {
+            var service = CreateArtistService();
+            var model = service.GetArtistByID(id);
+            return View(model);
+        }
+
+        //Post Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateArtistService();
+            service.DeleteArtist(id);
+            TempData["SaveResult"] = "Your note was deleted";
+            return RedirectToAction("Index");
+        }
         
-
-
-
-
-
-
-
-
+        //Details
+        public ActionResult Details(int id)
+        {
+            var service = CreateArtistService();
+            var model = service.GetArtistByID(id);
+            return View(model);
+        }
 
 
         private ArtistService CreateArtistService()
