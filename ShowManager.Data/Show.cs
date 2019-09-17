@@ -12,10 +12,13 @@ namespace ShowManager.Data
     {
         [Key]
         public int ShowID { get; set; }
+        [Required]
         public string ShowName { get; set; }
+        [Required]
         [ForeignKey("Venue")]
         public string VenueLocation { get; set; }
         public Venue Venue { get; set; }
+        [Required]
         [ForeignKey("Artist")]
         public string HeadLiningArtist { get; set; }
         public Artist Artist { get; set; }

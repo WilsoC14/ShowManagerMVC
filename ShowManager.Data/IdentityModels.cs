@@ -32,7 +32,7 @@ namespace ShowManager.Data
             return new ApplicationDbContext();
         }
         public DbSet<Artist> Artists { get; set; }
-        //public DbSet<Venue> Venues { get; set; }
+        public DbSet<Venue> Venues { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

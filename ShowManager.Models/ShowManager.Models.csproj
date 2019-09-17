@@ -59,10 +59,20 @@
     <Compile Include="ArtistEdit.cs" />
     <Compile Include="ArtistListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VenueCreate.cs" />
+    <Compile Include="VenueDetail.cs" />
+    <Compile Include="VenueEdit.cs" />
+    <Compile Include="VenueListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShowManager.Data\ShowManager.Data.csproj">
+      <Project>{20593BE3-9C5C-4D06-8074-3FE787212DE0}</Project>
+      <Name>ShowManager.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

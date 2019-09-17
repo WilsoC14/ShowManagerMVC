@@ -12,8 +12,11 @@ namespace ShowManager.Data
         public Guid UserID { get; set; }
         [Key]
         public int ArtistID { get; set; }
+        [Required]
         public string ArtistName { get; set; }
+        
         public bool IsHeadliner { get; set; }
+        [Required]
         public string Location { get; set; }
 
         

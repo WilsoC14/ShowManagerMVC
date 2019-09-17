@@ -51,6 +51,7 @@ namespace ShowManager.Services
         //cruD
         
         public bool DeleteArtist(int artistId)  //User Role... don't think _userID is needed
+                                                // maybe it is needed so that only that user or admin can delete
         {
             using (var ctx = new ApplicationDbContext())
             {
