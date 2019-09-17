@@ -17,7 +17,6 @@ namespace ShowManager.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ArtistService(userID);
-            // changed GetArtists return type from Array to List... still Ienumerable
             var model = service.GetArtists();
             return View(model);
         }

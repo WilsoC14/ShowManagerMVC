@@ -114,7 +114,7 @@ namespace ShowManager.Services
                     ctx
                         .Artists
                         .Single(e => e.ArtistID == id);
-                return  //Having the return above the new note is different from other methods I've seen
+                return  
                     new ArtistDetail
                     {
                         ArtistID = entity.ArtistID,
