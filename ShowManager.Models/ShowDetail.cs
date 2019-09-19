@@ -6,27 +6,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShowManager.Data
+namespace ShowManager.Models
 {
-    class Show
+    class ShowDetail
     {
-        [Key]
+        
         public int ShowID { get; set; }
         [Required]
         public string ShowName { get; set; }
         [Required]
         [ForeignKey("Venue")]
         public int VenueID { get; set; }
+        public string VenueName { get; set; }
 
         public string Location { get; set; }
-        public VenueType VenueType { get; set; }
+        public Data.VenueType VenueType { get; set; }
 
-        public Venue Venue { get; set; }
+        public Data.Venue Venue { get; set; }
         [Required]
         [ForeignKey("Artist")]
+        public string ArtistName { get; set; }
         public int ArtistID { get; set; }
-        
-        public Artist Artist { get; set; }
+
+        public Data.Artist Artist { get; set; }
         public string HeadLiningArtist { get; set; }
     }
 }
