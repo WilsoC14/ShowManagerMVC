@@ -10,6 +10,7 @@ namespace ShowManager.Data
     public enum VenueType { New = 1, LongStanding, Temporary,}
    public class Venue
     {
+        
         public Guid UserID { get; set; }
         [Key]
        public int VenueID { get; set; }

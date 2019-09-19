@@ -35,6 +35,35 @@ namespace ShowManager.Services
             }
         }
 
+        //crUd
+        public bool UpdateVenue(VenueEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {                           //Add e.OwnerID == _userID so only venue user or admin can delete after adding user roles
+                var entity = ctx.Venues.Single(e => e.VenueID == model.VenueID) ;
+                entity.VenueName = model.VenueName;
+                entity.VenueType = model.VenueType;
+                entity.Location = model.Location;
+
+                return ctx.SaveChanges() == 1;
+
+                    }
+        }
+
+        //cruD
+        public bool DeleteVenue(int venueId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Venues                 //Add e.OwnerID == _userID so only venue user or admin can delete after adding user roles
+                        .Single(e => e.VenueID == venueId);
+                ctx.Venues.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<VenueListItem> GetVenues()
         {
             using (var ctx = new ApplicationDbContext())
@@ -58,8 +87,14 @@ namespace ShowManager.Services
             { var entity = ctx.Venues.Single(e => e.VenueID == id);
                 return new VenueDetail
                 {
-
+                    VenueID = entity.VenueID,
+                    VenueName = entity.VenueName,
+                    VenueType = entity.VenueType,
+                    Location = entity.Location
+                };
                 }
+
+                
 }
 
     }

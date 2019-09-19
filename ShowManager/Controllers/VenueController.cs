@@ -49,13 +49,65 @@ namespace ShowManager.Controllers
 
         }
 
-        //Post: Edit
-        public ActionResult Edit (int id)
+        //Get: Edit
+        public ActionResult Edit(int id)
         {
             var service = CreateNewVenueService();
-            var artist = 
+            var detail = service.GetVenueByID(id);
+            var model = new VenueEdit
+            {
+                VenueID = detail.VenueID,
+                VenueName = detail.VenueName,
+                VenueType = detail.VenueType,
+                Location = detail.Location
+            };
+            return View(model);
         }
 
+        //Post: Edit
+        public ActionResult Edit(int id, VenueEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            if (model.VenueID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateNewVenueService();
+            if (service.UpdateVenue(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your note could not be updated.");
+            return View();
+
+        }
+
+        //Get Delete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateNewVenueService();
+            var model = service.GetVenueByID(id);
+            return View(model);
+        }
+
+        //Post Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateNewVenueService();
+            service.DeleteVenue(id);
+            TempData["SaveResult"] = "Your venue was deleted";
+            return RedirectToAction("Index");
+        }
         private VenueService CreateNewVenueService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
