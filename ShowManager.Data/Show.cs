@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Data
 {
-    class Show
+    public class Show
     {
         [Key]
         public int ShowID { get; set; }
@@ -17,6 +17,7 @@ namespace ShowManager.Data
         [Required]
         [ForeignKey("Venue")]
         public int VenueID { get; set; }
+        public string VenueName { get; set; }
 
         public string Location { get; set; }
         public VenueType VenueType { get; set; }
@@ -24,6 +25,7 @@ namespace ShowManager.Data
         public Venue Venue { get; set; }
         [Required]
         [ForeignKey("Artist")]
+        public string ArtistName { get; set; }
         public int ArtistID { get; set; }
         
         public Artist Artist { get; set; }

@@ -33,6 +33,7 @@ namespace ShowManager.Data
         }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Venue> Venues { get; set; }
+        public DbSet<Show> Shows { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

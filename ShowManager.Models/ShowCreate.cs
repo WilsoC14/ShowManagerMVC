@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Models
 {
-    class ShowCreate
+    public class ShowCreate
     {
         public string ShowName { get; set; }
         [ForeignKey("Venue")]

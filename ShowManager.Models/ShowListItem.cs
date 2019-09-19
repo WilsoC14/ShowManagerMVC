@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Models
 {
-    class ShowListItem
+   public class ShowListItem
     {
         public int ShowID { get; set; }
         [Required]
