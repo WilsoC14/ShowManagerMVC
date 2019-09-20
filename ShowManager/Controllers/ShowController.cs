@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShowManager.Data;
 
 namespace ShowManager.Controllers
 {
     public class ShowController : Controller
     {
+    private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Show Index
         public ActionResult Index()
         {
@@ -22,6 +24,7 @@ namespace ShowManager.Controllers
         // Get: Create Show
         public ActionResult Create()
         {
+            ViewBag.VenueID = new SelectList(_db.Venues.ToList(), "VenueID", "VenueName");
             return View();
         }
         // Post: Create Show

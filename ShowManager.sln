@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		NextSteps_ThingsToAdd.txt = NextSteps_ThingsToAdd.txt
 		Questions to Ask and Answer.txt = Questions to Ask and Answer.txt
+		QuestionsForClass.txt = QuestionsForClass.txt
 		StretchGoals.txt = StretchGoals.txt
 	EndProjectSection
 EndProject

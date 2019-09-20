@@ -1,3 +1,11 @@
 Add List of members to Artists class for multiple person artists
 
 Look for "Did you mean this" code for mispelled artists/Venues/Shows
+
+Location Based Venue Selection>Choose from Location from dropdown list, then choose Venue within that location in a dropdown list.
+
+"Create New ..." buttons for venues, artists, shows that don't exist yet.
+
+Maybe use Radio Buttons to add artists to a show
+
+create a View for adding artists to a show... comes after selecting a venue for a show.
