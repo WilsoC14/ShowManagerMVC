@@ -108,6 +108,16 @@ namespace ShowManager.Controllers
             TempData["SaveResult"] = "Your venue was deleted";
             return RedirectToAction("Index");
         }
+
+        //Details
+        //Details
+        public ActionResult Details(int id)
+        {
+            var service = CreateNewVenueService();
+            var model = service.GetVenueByID(id);
+            return View(model);
+        }
+
         private VenueService CreateNewVenueService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());

@@ -38,5 +38,70 @@ namespace ShowManager.Services
             }
         }
 
+        public ShowDetail GetShowByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+
+            {
+                var entity = ctx.Shows.Single(e => e.ShowID == id);
+                return new ShowDetail
+                {
+                    ShowID = entity.ShowID,
+                    ShowName = entity.ShowName,
+                    Venue = entity.Venue,
+                    VenueID = entity.VenueID,
+                    VenueName = entity.VenueName,
+                    VenueType = entity.VenueType,
+                    Location = entity.Location,
+                    Artist = entity.Artist,
+                    ArtistID = entity.ArtistID,
+                    ArtistName = entity.ArtistName,
+                };
+            }
+        }
+        public bool CreateShow(ShowCreate model)
+        {
+            var entity = new Show()
+            {
+                ShowName = model.ShowName,
+                Venue = model.Venue,
+                VenueID = model.VenueID,
+                VenueName = model.VenueName
+            };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Shows.Add(entity);
+                return ctx.SaveChanges() == 1;
+
+            }
+
+        }
+
+        public bool UpdateShow (ShowEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {   //Not entirely clear how I will manage the Artists properties of a Show
+                var entity = ctx.Shows.Single(e => e.ShowID == model.ShowID);
+                entity.ShowName = model.ShowName;
+                entity.Venue = model.Venue;
+                entity.Artist = model.Artist;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteShow(int showID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows                 //Add e.OwnerID == _userID so only venue user or admin can delete after adding user roles
+                        .Single(e => e.ShowID == showID);
+                ctx.Shows.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

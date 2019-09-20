@@ -1,0 +1,82 @@
+﻿@model ShowManager.Models.ShowDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShowDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtistID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeadLiningArtist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeadLiningArtist)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ShowID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

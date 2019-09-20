@@ -18,3 +18,4 @@ C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Deb
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.csproj.GenerateResource.cache
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.AddedGuidToArtist.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.CreatedVenueCrud.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.CreatedShowCrud.resources

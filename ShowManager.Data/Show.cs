@@ -25,8 +25,8 @@ namespace ShowManager.Data
         public Venue Venue { get; set; }
         [Required]
         [ForeignKey("Artist")]
-        public string ArtistName { get; set; }
         public int ArtistID { get; set; }
+        public string ArtistName { get; set; }
         
         public Artist Artist { get; set; }
         public string HeadLiningArtist { get; set; }

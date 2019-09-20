@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201909190055074_CreatedVenueCrud.Designer.cs">
       <DependentUpon>201909190055074_CreatedVenueCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909201722507_CreatedShowCrud.cs" />
+    <Compile Include="Migrations\201909201722507_CreatedShowCrud.Designer.cs">
+      <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909190055074_CreatedVenueCrud.resx">
       <DependentUpon>201909190055074_CreatedVenueCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909201722507_CreatedShowCrud.resx">
+      <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
