@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ShowManager.Controllers
 {
+    [Authorize]
     public class VenueController : Controller
     {
         // GET: Venue
@@ -65,6 +66,8 @@ namespace ShowManager.Controllers
         }
 
         //Post: Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, VenueEdit model)
         {
             if (!ModelState.IsValid)

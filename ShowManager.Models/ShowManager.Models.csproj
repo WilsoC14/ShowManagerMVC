@@ -54,19 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistCreate.cs" />
-    <Compile Include="ArtistDetail.cs" />
-    <Compile Include="ArtistEdit.cs" />
-    <Compile Include="ArtistListItem.cs" />
+    <Compile Include="Artist\ArtistCreate.cs" />
+    <Compile Include="Artist\ArtistDetail.cs" />
+    <Compile Include="Artist\ArtistEdit.cs" />
+    <Compile Include="Artist\ArtistListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowCreate.cs" />
-    <Compile Include="ShowDetail.cs" />
-    <Compile Include="ShowEdit.cs" />
-    <Compile Include="ShowListItem.cs" />
-    <Compile Include="VenueCreate.cs" />
-    <Compile Include="VenueDetail.cs" />
-    <Compile Include="VenueEdit.cs" />
-    <Compile Include="VenueListItem.cs" />
+    <Compile Include="Show\ShowCreate.cs" />
+    <Compile Include="Show\ShowDetail.cs" />
+    <Compile Include="Show\ShowEdit.cs" />
+    <Compile Include="Show\ShowListItem.cs" />
+    <Compile Include="Venue\VenueCreate.cs" />
+    <Compile Include="Venue\VenueDetail.cs" />
+    <Compile Include="Venue\VenueEdit.cs" />
+    <Compile Include="Venue\VenueListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

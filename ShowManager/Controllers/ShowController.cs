@@ -10,9 +10,10 @@ using ShowManager.Data;
 
 namespace ShowManager.Controllers
 {
+    [Authorize]
     public class ShowController : Controller
     {
-    private ApplicationDbContext _db = new ApplicationDbContext();
+    //private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Show Index
         public ActionResult Index()
         {
@@ -23,8 +24,9 @@ namespace ShowManager.Controllers
         }
         // Get: Create Show
         public ActionResult Create()
-        {
-            ViewBag.VenueID = new SelectList(_db.Venues.ToList(), "VenueID", "VenueName");
+        {          
+            var service = CreateShowService();
+            ViewBag.VenueID = new SelectList(service.GetShows(), "VenueID", "VenueName");
             return View();
         }
         // Post: Create Show
