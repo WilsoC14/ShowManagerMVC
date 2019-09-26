@@ -23,12 +23,12 @@ namespace ShowManager.Data
         public VenueType VenueType { get; set; }
 
         public Venue Venue { get; set; }
-        [Required]
-        [ForeignKey("Artist")]
-        public int ArtistID { get; set; }
-        public string ArtistName { get; set; }
+      //  [Required]
+       // [ForeignKey("Artist")]
+        //public int ArtistID { get; set; }
+        //public string ArtistName { get; set; }
         
-        public Artist Artist { get; set; }
+        //public Artist Artist { get; set; }
         public string HeadLiningArtist { get; set; }
     }
 }

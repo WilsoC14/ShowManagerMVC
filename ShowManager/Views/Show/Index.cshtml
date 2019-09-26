@@ -11,27 +11,17 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ShowID)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.ShowName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VenueID)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.VenueName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistID)
-        </th>
+        </th> 
         <th>
             @Html.DisplayNameFor(model => model.HeadLiningArtist)
         </th>
@@ -40,27 +30,18 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShowID)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.ShowName)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VenueID)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.VenueName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Location)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistID)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.HeadLiningArtist)
         </td>

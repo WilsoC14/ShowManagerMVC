@@ -63,9 +63,9 @@ namespace ShowManager.Controllers
                 VenueName = detail.VenueName,
                 VenueType = detail.VenueType,
                 Location = detail.Location,
-                Artist = detail.Artist,
-                ArtistID = detail.ArtistID,
-                ArtistName = detail.ArtistName,
+              ////  Artist = detail.Artist,
+              //  ArtistID = detail.ArtistID,
+              //  ArtistName = detail.ArtistName,
             };
             return View(model);
         }

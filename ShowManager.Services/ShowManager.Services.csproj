@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArtistService.cs" />
+    <Compile Include="ArtistShowDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowService.cs" />
     <Compile Include="VenueService.cs" />

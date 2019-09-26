@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist.cs" />
-    <Compile Include="ArtistVenueShowData.cs" />
+    <Compile Include="ArtistShowData.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201909112233501_InitialMigration.cs" />
     <Compile Include="Migrations\201909112233501_InitialMigration.Designer.cs">
@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201909201722507_CreatedShowCrud.cs" />
     <Compile Include="Migrations\201909201722507_CreatedShowCrud.Designer.cs">
       <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.cs" />
+    <Compile Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.Designer.cs">
+      <DependentUpon>201909260021370_RemovedArtistForeignKeyFromShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909201722507_CreatedShowCrud.resx">
       <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.resx">
+      <DependentUpon>201909260021370_RemovedArtistForeignKeyFromShow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

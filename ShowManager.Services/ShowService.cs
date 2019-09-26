@@ -29,9 +29,9 @@ namespace ShowManager.Services
                     VenueName = e.VenueName,
                     VenueType = e.VenueType,
                     Location = e.Location,
-                    Artist = e.Artist,
-                    ArtistID = e.ArtistID,
-                    ArtistName = e.ArtistName,
+                    //Artist = e.Artist,
+                    //ArtistID = e.ArtistID,
+                    //ArtistName = e.ArtistName,
 
                 });
                 return query.ToList();
@@ -53,9 +53,9 @@ namespace ShowManager.Services
                     VenueName = entity.VenueName,
                     VenueType = entity.VenueType,
                     Location = entity.Location,
-                    Artist = entity.Artist,
-                    ArtistID = entity.ArtistID,
-                    ArtistName = entity.ArtistName,
+                  ////  Artist = entity.Artist,
+                  //  ArtistID = entity.ArtistID,
+                  //  ArtistName = entity.ArtistName,
                 };
             }
         }
@@ -85,7 +85,7 @@ namespace ShowManager.Services
                 var entity = ctx.Shows.Single(e => e.ShowID == model.ShowID);
                 entity.ShowName = model.ShowName;
                 entity.Venue = model.Venue;
-                entity.Artist = model.Artist;
+             //   entity.Artist = model.Artist;
                 return ctx.SaveChanges() == 1;
             }
         }
