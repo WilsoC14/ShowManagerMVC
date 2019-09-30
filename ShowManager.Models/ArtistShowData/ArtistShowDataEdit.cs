@@ -11,17 +11,18 @@ namespace ShowManager.Models.ArtistShowData
     public class ArtistShowDataEdit
     {
         [Key]
-        public int EventID { get; set; }
+        public int ArtistShowDataID { get; set; }
         // public string EventName { get; set; }
         [ForeignKey("Artist")]
         public int ArtistID { get; set; }
         [Required]
-        public string ArtistName { get; set; }
+      
         public Data.Artist Artist { get; set; }
         [ForeignKey("Show")]
         public int ShowID { get; set; }
         [Required]
-        public string ShowName { get; set; }
+     
         public Data.Show Show { get; set; }
+        public bool IsHeadLiner { get; set; }
     }
 }

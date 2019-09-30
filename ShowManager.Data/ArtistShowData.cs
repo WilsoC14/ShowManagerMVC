@@ -10,22 +10,18 @@ namespace ShowManager.Data
 {
     public class ArtistShowData
     {   [Key]
-        public int EventID { get; set; }
+        public int ArtistShowDataID { get; set; }
        // public string EventName { get; set; }
         [ForeignKey("Artist")]  
         public int ArtistID { get; set; }
         [Required]
-        public string ArtistName { get; set; }
         public bool IsHeadLiner { get; set; }
         public virtual Artist Artist { get; set; }
         [ForeignKey("Show")]
         public int ShowID { get; set; }
         [Required]
-        public string ShowName { get; set; }
+      
         public virtual Show Show { get; set; }
-        //[ForeignKey("Venue")]
-        //public int VenueID { get; set; }
-        //public string VenueName { get; set; }
-        //public Venue Venue { get; set; }
+      
     }
 }

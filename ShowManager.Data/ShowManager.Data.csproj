@@ -57,25 +57,9 @@
     <Compile Include="Artist.cs" />
     <Compile Include="ArtistShowData.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201909112233501_InitialMigration.cs" />
-    <Compile Include="Migrations\201909112233501_InitialMigration.Designer.cs">
-      <DependentUpon>201909112233501_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909112315147_AddedGuidToArtist.cs" />
-    <Compile Include="Migrations\201909112315147_AddedGuidToArtist.Designer.cs">
-      <DependentUpon>201909112315147_AddedGuidToArtist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909190055074_CreatedVenueCrud.cs" />
-    <Compile Include="Migrations\201909190055074_CreatedVenueCrud.Designer.cs">
-      <DependentUpon>201909190055074_CreatedVenueCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909201722507_CreatedShowCrud.cs" />
-    <Compile Include="Migrations\201909201722507_CreatedShowCrud.Designer.cs">
-      <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.cs" />
-    <Compile Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.Designer.cs">
-      <DependentUpon>201909260021370_RemovedArtistForeignKeyFromShow.cs</DependentUpon>
+    <Compile Include="Migrations\201909302101291_JoshBrokeMyDatabase.cs" />
+    <Compile Include="Migrations\201909302101291_JoshBrokeMyDatabase.Designer.cs">
+      <DependentUpon>201909302101291_JoshBrokeMyDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,20 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909112233501_InitialMigration.resx">
-      <DependentUpon>201909112233501_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909112315147_AddedGuidToArtist.resx">
-      <DependentUpon>201909112315147_AddedGuidToArtist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909190055074_CreatedVenueCrud.resx">
-      <DependentUpon>201909190055074_CreatedVenueCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909201722507_CreatedShowCrud.resx">
-      <DependentUpon>201909201722507_CreatedShowCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909260021370_RemovedArtistForeignKeyFromShow.resx">
-      <DependentUpon>201909260021370_RemovedArtistForeignKeyFromShow.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909302101291_JoshBrokeMyDatabase.resx">
+      <DependentUpon>201909302101291_JoshBrokeMyDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,9 +15,9 @@ namespace ShowManager.Services
             var entity = new ArtistShowData()
             {
                 ArtistID = model.ArtistID,
-                ArtistName = model.ArtistName,
+                IsHeadLiner = model.IsHeadLiner,
                 ShowID = model.ShowID,
-                ShowName = model.ShowName
+
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -33,12 +33,12 @@ namespace ShowManager.Services
             {
                 var query = ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
                 {
-                    EventID = e.EventID,
+                    ArtistShowDataID = e.ArtistShowDataID,
                     ArtistID = e.ArtistID,
-                    ArtistName = e.ArtistName,
+                    
                     Artist = e.Artist,
                     ShowID = e.ShowID,
-                    ShowName = e.ShowName,
+                   
                     Show = e.Show
                 });
                 return query.ToList();
@@ -55,13 +55,13 @@ namespace ShowManager.Services
                 var entity = ctx.ArtistShowDatas.Single(e => e.ShowID == id);
                 return new ArtistShowDataDetail
                 {
-                    EventID = entity.EventID,
+                    ArtistShowDataID = entity.ArtistShowDataID,
                     ArtistID = entity.ArtistID,
-                    ArtistName = entity.ArtistName,
-                    Artist = entity.Artist,
+                   
+        
                     ShowID = entity.ShowID,
-                    ShowName = entity.ShowName,
-                    Show = entity.Show
+                   
+         
                 };
 
 
@@ -72,13 +72,12 @@ namespace ShowManager.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.ArtistShowDatas.Single(e => e.EventID == model.EventID);
+                var entity = ctx.ArtistShowDatas.Single(e => e.ArtistShowDataID == model.ArtistShowDataID);
                 entity.ArtistID = model.ArtistID;
-                entity.ArtistName = model.ArtistName;
-                entity.Artist = model.Artist;
+            
                 entity.ShowID = model.ShowID;
-                entity.ShowName = model.ShowName;
-                entity.Show = model.Show;
+            
+            
                 return ctx.SaveChanges() == 1;
 
             }
@@ -88,7 +87,7 @@ namespace ShowManager.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.ArtistShowDatas.Single(e => e.EventID == id);
+                var entity = ctx.ArtistShowDatas.Single(e => e.ArtistShowDataID == id);
                 ctx.ArtistShowDatas.Remove(entity);
                 return ctx.SaveChanges() == 1;
 

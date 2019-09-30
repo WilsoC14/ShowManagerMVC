@@ -9,7 +9,7 @@ namespace ShowManager.Models.ArtistShowData
 {
     public class ArtistShowDataListItem
     {
-        public int EventID { get; set; }
+        public int ArtistShowDataID { get; set; }
         [ForeignKey("Artist")]
         public int ArtistID { get; set; }
         public string ArtistName { get; set; }
@@ -18,5 +18,7 @@ namespace ShowManager.Models.ArtistShowData
         public int ShowID { get; set; }
         public string ShowName { get; set; }
         public Data.Show Show { get; set; }
+        public bool IsHeadLiner { get; set; }
     }
+
 }
