@@ -103,5 +103,22 @@ namespace ShowManager.Services
             }
         }
 
+        // Add EXISTING artist to artistShowData
+        // 
+        public bool AddShowToArtistShowObject(int showID, int artistID)
+        {
+            var artistShowData = new ArtistShowData();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows
+                        .Single(e => e.ShowID == showID);
+                artistShowData.ShowID = showID;
+                artistShowData.ArtistID = artistID;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

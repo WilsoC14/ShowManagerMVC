@@ -15,6 +15,9 @@ namespace ShowManager.Services
         {
             _userID = userID;
         }
+        public ArtistService()
+        {//do not delete, need blank ctor to get list of all artists not associated with user
+        }
 
         //Crud
         public bool CreateArtist(ArtistCreate model)
@@ -71,7 +74,7 @@ namespace ShowManager.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.Artists
-                               .Where(e => e.UserID == _userID)
+         // don't need userID because any user should be able to view all artists. also need all artists to use dropdown list in "AddArtistToShow"                    //  .Where(e => e.UserID == _userID)
                                .Select(
                                    e => new ArtistListItem
                                    {

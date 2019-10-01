@@ -25,8 +25,8 @@ namespace ShowManager.Controllers
         // Get: Create Show
         public ActionResult Create()
         {          
-            var service = CreateShowService();
-            ViewBag.VenueID = new SelectList(service.GetShows(), "VenueID", "VenueName");
+            var service = NewVenueService();
+            ViewBag.VenueID = new SelectList(service.GetVenues(), "VenueID", "VenueID");
             return View();
         }
         // Post: Create Show
@@ -42,7 +42,7 @@ namespace ShowManager.Controllers
             if (service.CreateShow(model))
             {
                 TempData["SaveResult"] = "Your Show was created.";
-                return RedirectToAction("Index");
+               return RedirectToAction("Index");
             }
             else
                 ModelState.AddModelError("", "Show could not be created");
@@ -63,9 +63,7 @@ namespace ShowManager.Controllers
                 VenueName = detail.VenueName,
                 VenueType = detail.VenueType,
                 Location = detail.Location,
-              ////  Artist = detail.Artist,
-              //  ArtistID = detail.ArtistID,
-              //  ArtistName = detail.ArtistName,
+
             };
             return View(model);
         }
@@ -130,6 +128,15 @@ namespace ShowManager.Controllers
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ShowService(userID);
             return service;
+        }
+        //remove Guid functionality
+        private VenueService NewVenueService()
+        {
+            
+                var userID = Guid.Parse(User.Identity.GetUserId());
+                var service = new VenueService(userID);
+                return service;
+            
         }
     }
 }

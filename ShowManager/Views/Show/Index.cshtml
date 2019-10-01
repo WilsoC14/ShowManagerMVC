@@ -41,14 +41,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.Location)
         </td>
-
         <td>
             @Html.DisplayFor(modelItem => item.HeadLiningArtist)
         </td>
+
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ShowID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ShowID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ShowID })
+            @Html.ActionLink("Add Artist", "AddExistingArtistToExistingShow","ArtistDateShow", new { id = item.ShowID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
         </td>
     </tr>
 }

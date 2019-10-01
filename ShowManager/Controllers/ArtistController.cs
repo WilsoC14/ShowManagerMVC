@@ -126,8 +126,8 @@ namespace ShowManager.Controllers
 
         private ArtistService CreateArtistService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new ArtistService(userID);
+          //  var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new ArtistService();
             return service;
 
         }

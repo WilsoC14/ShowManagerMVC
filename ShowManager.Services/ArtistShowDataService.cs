@@ -8,8 +8,35 @@ using System.Threading.Tasks;
 
 namespace ShowManager.Services
 {
-    class ArtistShowDataService
+    public class ArtistShowDataService
     {
+        public ArtistShowDataService() { }
+
+
+
+        public bool AddShowToAsdObject(int showID, ArtistShowDataCreate model)
+        {
+           
+         
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Shows
+                        .Single(e => e.ShowID == showID);
+                model.ShowID = showID;
+
+                return ctx.SaveChanges() == 1;
+            }
+          
+        }
+
+        //public bool AddArtistTAsdObject()
+
+
+
+
+
         public bool CreateArtistShowData(ArtistShowDataCreate model)
         {
             var entity = new ArtistShowData()
@@ -17,7 +44,6 @@ namespace ShowManager.Services
                 ArtistID = model.ArtistID,
                 IsHeadLiner = model.IsHeadLiner,
                 ShowID = model.ShowID,
-
             };
 
             using (var ctx = new ApplicationDbContext())
