@@ -15,14 +15,14 @@ namespace ShowManager.Models
         [Required]
         public string ShowName { get; set; }
         [Required]
-        [ForeignKey("Venue")]
+        //[ForeignKey("Venue")]
         public int VenueID { get; set; }
         public string VenueName { get; set; }
 
         public string Location { get; set; }
         public Data.VenueType VenueType { get; set; }
 
-        public Data.Venue Venue { get; set; }
+       public Data.Venue Venue { get; set; }
         //[Required]
         //[ForeignKey("Artist")]
         //public string ArtistName { get; set; }

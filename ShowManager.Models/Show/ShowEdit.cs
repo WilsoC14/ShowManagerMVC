@@ -10,6 +10,7 @@ namespace ShowManager.Models
 {
     public class ShowEdit
     {
+        [Key]
         public int ShowID { get; set; }
         [Required]
         public string ShowName { get; set; }

@@ -22,7 +22,7 @@ namespace ShowManager.Data
         public string Location { get; set; }
         public VenueType VenueType { get; set; }
 
-        public Venue Venue { get; set; }
+        public virtual Venue Venue { get; set; }
 
         //HeadLiningArtist probably should be type Artist... leaving it string for now
         public string HeadLiningArtist { get; set; }

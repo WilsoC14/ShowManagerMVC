@@ -26,12 +26,10 @@ namespace ShowManager.Services
                     ShowName = e.ShowName,
                     Venue = e.Venue,
                     VenueID = e.VenueID,
-                    VenueName = e.VenueName,
-                    VenueType = e.VenueType,
-                    Location = e.Location,
-                    //Artist = e.Artist,
-                    //ArtistID = e.ArtistID,
-                    //ArtistName = e.ArtistName,
+                    VenueName = e.Venue.VenueName,
+                    VenueType = e.Venue.VenueType,
+                    Location = e.Venue.Location,
+               
 
                 });
                 return query.ToList();
@@ -48,14 +46,12 @@ namespace ShowManager.Services
                 {
                     ShowID = entity.ShowID,
                     ShowName = entity.ShowName,
-                    Venue = entity.Venue,
                     VenueID = entity.VenueID,
-                    VenueName = entity.VenueName,
-                    VenueType = entity.VenueType,
-                    Location = entity.Location,
-                  ////  Artist = entity.Artist,
-                  //  ArtistID = entity.ArtistID,
-                  //  ArtistName = entity.ArtistName,
+                    Venue = entity.Venue,
+                    VenueName = entity.Venue.VenueName,
+                    VenueType = entity.Venue.VenueType,
+                    Location = entity.Venue.Location,
+               
                 };
             }
         }
@@ -63,17 +59,14 @@ namespace ShowManager.Services
         {
             var entity = new Show()
             {
-                ShowName = model.ShowName,
-                Venue = model.Venue,
-                VenueID = model.VenueID,
-                VenueName = model.VenueName
+                ShowName = model.ShowName,         
+                VenueID = model.VenueID,         
             };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Shows.Add(entity);
                 return ctx.SaveChanges() == 1;
-
             }
 
         }
@@ -81,11 +74,14 @@ namespace ShowManager.Services
         public bool UpdateShow (ShowEdit model)
         {
             using (var ctx = new ApplicationDbContext())
-            {   //Not entirely clear how I will manage the Artists properties of a Show
+            {   
                 var entity = ctx.Shows.Single(e => e.ShowID == model.ShowID);
+                
                 entity.ShowName = model.ShowName;
-                entity.Venue = model.Venue;
-             //   entity.Artist = model.Artist;
+                //need if statement to query database and see if a Show with that Name Exists. Drop Down Window won't work because you're changing the name of a show to one that doesn't exist.
+                entity.VenueID = model.VenueID;
+                // need code for adding an Artist through ArtistShowData
+               
                 return ctx.SaveChanges() == 1;
             }
         }

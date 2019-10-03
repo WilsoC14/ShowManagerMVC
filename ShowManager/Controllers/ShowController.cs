@@ -26,7 +26,7 @@ namespace ShowManager.Controllers
         public ActionResult Create()
         {          
             var service = NewVenueService();
-            ViewBag.VenueID = new SelectList(service.GetVenues(), "VenueID", "VenueID");
+           // ViewBag.VenueID = new SelectList(service.GetVenues(), "VenueID", "VenueName");
             return View();
         }
         // Post: Create Show
@@ -60,24 +60,31 @@ namespace ShowManager.Controllers
                 ShowName = detail.ShowName,
                 Venue = detail.Venue,
                 VenueID = detail.VenueID,
-                VenueName = detail.VenueName,
-                VenueType = detail.VenueType,
-                Location = detail.Location,
+                VenueName = detail.Venue.VenueName,
+                VenueType = detail.Venue.VenueType,
+                Location = detail.Venue.Location,
 
             };
+            var venueService = NewVenueService();
+            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
             return View(model);
         }
 
         //Post: Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ShowEdit model)
         {
+            var venueService = NewVenueService();
             if (!ModelState.IsValid)
             {
+            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
                 return View(model);
             }
-            if (model.VenueID != id)
+            if (model.ShowID != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
+            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
                 return View(model);
             }
 
@@ -87,6 +94,8 @@ namespace ShowManager.Controllers
                 TempData["SaveResult"] = "Your show was updated.";
                 return RedirectToAction("Index");
             }
+
+            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
             ModelState.AddModelError("", "Your show could not be updated.");
             return View();
 
@@ -133,8 +142,8 @@ namespace ShowManager.Controllers
         private VenueService NewVenueService()
         {
             
-                var userID = Guid.Parse(User.Identity.GetUserId());
-                var service = new VenueService(userID);
+                //var userID = Guid.Parse(User.Identity.GetUserId());
+                var service = new VenueService();
                 return service;
             
         }

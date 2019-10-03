@@ -10,12 +10,12 @@ namespace ShowManager.Models
     public class ShowCreate
     {
         public string ShowName { get; set; }
-        [ForeignKey("Venue")]
+        //[ForeignKey("Venue")]
         public int VenueID { get; set; }
-        public string VenueName { get; set; }
-        public string Location { get; set; }
+       // public string VenueName { get; set; }
+       // public string Location { get; set; }
         //VenueType will be determined after VenueID links to existing venue... same with other parameters
-        public Data.Venue Venue { get; set; }
+   //     public Data.Venue Venue { get; set; }
         //[ForeignKey("Artist")]
         //public int ArtistID { get; set; }
         //public string ArtistName { get; set; }

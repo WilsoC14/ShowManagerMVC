@@ -14,7 +14,7 @@ namespace ShowManager.Models
         [Required]
         public string ShowName { get; set; }
         [Required]
-        [ForeignKey("Venue")]
+       // [ForeignKey("Venue")]
         public int VenueID { get; set; }
         public string VenueName { get; set; }
 

@@ -1,0 +1,2 @@
+Location in Code: show>edit.cshtml
+Bug: Location depends on venue, location is just something you can view as a property of the venue... it would be nice to see a list of venues for a location (city, state, or country)

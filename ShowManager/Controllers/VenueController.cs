@@ -15,15 +15,20 @@ namespace ShowManager.Controllers
         // GET: Venue
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new VenueService(userID);
+           // var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new VenueService();
             var model = service.GetVenues();
+           
             return View(model);
         }
 
         //Get: Create Venue
         public ActionResult Create()
         {
+            var service = new VenueService();
+           // var model = service.GetVenues();
+            
+        //    ViewBag.VenueType = new SelectList();
             return View();
         }
 
@@ -123,8 +128,8 @@ namespace ShowManager.Controllers
 
         private VenueService CreateNewVenueService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new VenueService(userID);
+           // var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new VenueService();
             return service;
         }
     }

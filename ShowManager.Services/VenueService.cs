@@ -10,18 +10,20 @@ namespace ShowManager.Services
 {
     public class VenueService
     {
-        private readonly Guid _userID;
-        public VenueService(Guid userID)
-        {
-            _userID = userID;
-        }
+   //     private readonly Guid _userID;
+        //public VenueService(Guid userID)
+        //{
+        //    _userID = userID;
+        //}
+        public VenueService ()
+        { }
 
         //Crud
         public bool CreateVenue(VenueCreate model)
         {
             var entity = new Venue()
             {
-                UserID = _userID,
+              //  UserID = _userID,
                 VenueName = model.VenueName,
                 VenueType = model.VenueType,
                 Location = model.Location
