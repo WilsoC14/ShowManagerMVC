@@ -23,6 +23,6 @@ namespace ShowManager.Data
 
         public string HeadLiningArtist { get; set; }
 
-        //Icollection stretchgoal
+        public virtual ICollection<ArtistShowData> ArtistShowData { get; set; }
     }
 }

@@ -44,6 +44,15 @@
             @Html.DisplayFor(model => model.HeadLiningArtist)
         </dd>
 
+        <dt>
+            Artists on Bill
+        </dt>
+        @foreach( var artist in Model.ListOfArtist)
+        {
+            <dd>
+                @artist.ArtistName
+            </dd>
+        }
     </dl>
 </div>
 <p>

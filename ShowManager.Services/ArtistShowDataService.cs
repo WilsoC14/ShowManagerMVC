@@ -69,22 +69,31 @@ namespace ShowManager.Services
             }
         }
 
-        public ArtistShowDataDetail GetAsdByID(int id)
+        public IEnumerable<ArtistShowDataListItem> GetList_ArtistShowData_By_ShowID(int showID)
         {
             using (var ctx = new ApplicationDbContext())
+            {
+
+                var query =ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
+                    {
+                        ArtistShowDataID = e.ArtistShowDataID,
+                        ArtistID = e.ArtistID,
+                        ShowID = e.ShowID
+                });
+                return query.ToList();
+
+            }
+
+
+
 
             {
-                var entity = ctx.ArtistShowDatas.Single(e => e.ShowID == id);
-                return new ArtistShowDataDetail
-                {
-                    ArtistShowDataID = entity.ArtistShowDataID,
-                    ArtistID = entity.ArtistID,
-
-
-                    ShowID = entity.ShowID,
-
-
-                };
+                //var entity = ctx.ArtistShowDatas.Select(e => e.ShowID == showID);
+                //{
+                //    ArtistShowDataID = entity.ArtistShowDataID,
+                //    ArtistID = entity.ArtistID,
+                //    ShowID = entity.ShowID,
+                //};
 
 
             }
