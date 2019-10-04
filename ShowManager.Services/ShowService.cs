@@ -10,11 +10,13 @@ namespace ShowManager.Services
 {
    public class ShowService
     {
-        private readonly Guid _userID;
-        public ShowService(Guid userID)
-        {
-            _userID = userID;
-        }
+      //  private readonly Guid _userID;
+        //public ShowService(Guid userID)
+        //{
+        //    _userID = userID;
+        //}
+        public ShowService()
+        { }
 
         public IEnumerable<ShowListItem> GetShows()
         {

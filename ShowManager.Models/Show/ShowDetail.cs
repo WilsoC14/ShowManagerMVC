@@ -12,10 +12,11 @@ namespace ShowManager.Models
     {
         
         public int ShowID { get; set; }
+
         [Required]
         public string ShowName { get; set; }
+
         [Required]
-        //[ForeignKey("Venue")]
         public int VenueID { get; set; }
         public string VenueName { get; set; }
 
@@ -23,12 +24,7 @@ namespace ShowManager.Models
         public Data.VenueType VenueType { get; set; }
 
        public Data.Venue Venue { get; set; }
-        //[Required]
-        //[ForeignKey("Artist")]
-        //public string ArtistName { get; set; }
-        //public int ArtistID { get; set; }
 
-        //public Data.Artist Artist { get; set; }
         public string HeadLiningArtist { get; set; }
     }
 }

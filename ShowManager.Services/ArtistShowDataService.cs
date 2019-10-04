@@ -14,35 +14,33 @@ namespace ShowManager.Services
 
 
 
-        public bool AddShowToAsdObject(int showID, ArtistShowDataCreate model)
+        public AddArtistToShowModel GetAddArtistToShowModel(int showID)
         {
-           
-         
+            // takes in a show ID from clicking "add artist" button on detail or list view and an empty model
+
+
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Shows
-                        .Single(e => e.ShowID == showID);
-                model.ShowID = showID;
+                var entity = ctx.Shows.Single(e => e.ShowID == showID);
+                return new AddArtistToShowModel()
+                {
+                    ShowID = entity.ShowID,
+                    ShowName = entity.ShowName,
+                    VenueName = entity.Venue.VenueName,
 
-                return ctx.SaveChanges() == 1;
+                };
             }
-          
+
         }
 
-        //public bool AddArtistTAsdObject()
+        
 
-
-
-
-
-        public bool CreateArtistShowData(ArtistShowDataCreate model)
+        public bool AddArtistShowDataToDataTable(AddArtistToShowModel model)
         {
             var entity = new ArtistShowData()
             {
                 ArtistID = model.ArtistID,
-                IsHeadLiner = model.IsHeadLiner,
+                //IsHeadLiner = model.IsHeadLiner,
                 ShowID = model.ShowID,
             };
 
@@ -61,10 +59,8 @@ namespace ShowManager.Services
                 {
                     ArtistShowDataID = e.ArtistShowDataID,
                     ArtistID = e.ArtistID,
-                    
                     Artist = e.Artist,
                     ShowID = e.ShowID,
-                   
                     Show = e.Show
                 });
                 return query.ToList();
@@ -83,33 +79,33 @@ namespace ShowManager.Services
                 {
                     ArtistShowDataID = entity.ArtistShowDataID,
                     ArtistID = entity.ArtistID,
-                   
-        
+
+
                     ShowID = entity.ShowID,
-                   
-         
+
+
                 };
 
 
             }
         }
 
-        public bool UpdateArtistShowData (ArtistShowDataEdit model)
+        public bool UpdateArtistShowData(ArtistShowDataEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.ArtistShowDatas.Single(e => e.ArtistShowDataID == model.ArtistShowDataID);
                 entity.ArtistID = model.ArtistID;
-            
+
                 entity.ShowID = model.ShowID;
-            
-            
+
+
                 return ctx.SaveChanges() == 1;
 
             }
 
         }
-        public bool DeleteArtistShowData (int id)
+        public bool DeleteArtistShowData(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {

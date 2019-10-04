@@ -15,8 +15,8 @@ namespace ShowManager.Controllers
         // GET: Artist
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new ArtistService(userID);
+          //  var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new ArtistService();
             var model = service.GetArtists();
             return View(model);
         }
@@ -111,7 +111,7 @@ namespace ShowManager.Controllers
         {
             var service = CreateArtistService();
             service.DeleteArtist(id);
-            TempData["SaveResult"] = "Your note was deleted";
+            TempData["SaveResult"] = "Your Artist was deleted";
             return RedirectToAction("Index");
         }
         

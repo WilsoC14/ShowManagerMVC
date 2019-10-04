@@ -61,6 +61,14 @@
     <Compile Include="Migrations\201909302101291_JoshBrokeMyDatabase.Designer.cs">
       <DependentUpon>201909302101291_JoshBrokeMyDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910032205304_Removed_Unnecessary_Properties_From_ShowObject.cs" />
+    <Compile Include="Migrations\201910032205304_Removed_Unnecessary_Properties_From_ShowObject.Designer.cs">
+      <DependentUpon>201910032205304_Removed_Unnecessary_Properties_From_ShowObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910032340317_Commented_Out_IsHeadliner.cs" />
+    <Compile Include="Migrations\201910032340317_Commented_Out_IsHeadliner.Designer.cs">
+      <DependentUpon>201910032340317_Commented_Out_IsHeadliner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
@@ -73,6 +81,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909302101291_JoshBrokeMyDatabase.resx">
       <DependentUpon>201909302101291_JoshBrokeMyDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910032205304_Removed_Unnecessary_Properties_From_ShowObject.resx">
+      <DependentUpon>201910032205304_Removed_Unnecessary_Properties_From_ShowObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910032340317_Commented_Out_IsHeadliner.resx">
+      <DependentUpon>201910032340317_Commented_Out_IsHeadliner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

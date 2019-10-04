@@ -10,11 +10,11 @@ namespace ShowManager.Services
 {
     public class ArtistService
     {
-        private readonly Guid _userID;
-        public ArtistService(Guid userID)
-        {
-            _userID = userID;
-        }
+      //  private readonly Guid _userID;
+        //public ArtistService(Guid userID)
+        //{
+        //    _userID = userID;
+        //}
         public ArtistService()
         {//do not delete, need blank ctor to get list of all artists not associated with user
         }
@@ -24,7 +24,7 @@ namespace ShowManager.Services
         {
             var entity = new Artist()
             {
-                UserID = _userID,
+             //   UserID = _userID,
                 ArtistName = model.ArtistName,
                 Location = model.Location
             };

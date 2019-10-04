@@ -46,7 +46,7 @@
         </td>
 
         <td>
-            @Html.ActionLink("Add Artist", "AddExistingArtistToExistingShow","ArtistDateShow", new { id = item.ShowID }) |
+            @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = item.ShowID }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
             @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
