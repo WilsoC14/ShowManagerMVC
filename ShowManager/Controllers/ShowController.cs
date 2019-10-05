@@ -23,11 +23,24 @@ namespace ShowManager.Controllers
             var model = service.GetShows();
             return View(model);
         }
+
+        public ActionResult CreateFromVenueIndex(int id)
+        {
+            var service = NewVenueService();
+            var venue = service.GetVenueByID(id);
+            ViewBag.VenueName = venue.VenueName;
+            var showCreate = new ShowCreate
+            {
+                VenueID = id
+            };
+
+            return View(showCreate);
+        }
         // Get: Create Show
         public ActionResult Create()
         {          
-          //  var service = NewVenueService();
-           // ViewBag.VenueID = new SelectList(service.GetVenues(), "VenueID", "VenueName");
+            var service = NewVenueService();
+            ViewBag.VenueID = new SelectList(service.GetVenues(), "VenueID", "VenueName");
             return View();
         }
         // Post: Create Show
