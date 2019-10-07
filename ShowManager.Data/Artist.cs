@@ -19,6 +19,7 @@ namespace ShowManager.Data
         [Required]
         public string Location { get; set; }
 
+        //public virtual ICollection<Show> ShowsPlayed { get; set; }
         
 
     }

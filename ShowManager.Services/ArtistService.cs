@@ -117,15 +117,68 @@ namespace ShowManager.Services
                     ctx
                         .Artists
                         .Single(e => e.ArtistID == id);
+
+                var listOfShows = ShowsPlayedToShowDetail(id);
+
                 return  
                     new ArtistDetail
                     {
                         ArtistID = entity.ArtistID,
                         ArtistName = entity.ArtistName,
-                        Location = entity.Location
+                        Location = entity.Location,
+                        ListOfShows = listOfShows
                        
                     };
             }
+        }
+
+        //Get Venues Artist has played at
+        //public List<VenueDetail> GetVenuesArtistHasPlayed(int artistID)
+        //{
+        //    var listOfShows = GetShowsArtistHasPlayed(artistID);
+        //    var venueService = new VenueService();
+        //    var listOfVenueDetail = new List<VenueDetail>();
+
+        //    foreach(var item in listOfShows)
+
+        
+
+        public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
+        {
+            var showService = new ShowService();
+            var listOfShowDetail = new List<ShowDetail>();
+            var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
+            foreach(var item in listOfShowIDs)
+            {
+                var detail = showService.GetShowByID(item.ShowID);   
+                listOfShowDetail.Add(detail);
+            }
+            return listOfShowDetail;
+
+        }
+        
+        
+        public List<Show> GetShowIDsArtistHasPlayed(int artistID)
+        {
+            var asdService = new ArtistShowDataService();
+            var showService = new ShowService();
+            var listOfShows = new List<Show>();
+            var ListOfArtistShowData = asdService.GetArtistShowData();
+            foreach(var item in ListOfArtistShowData)
+            {
+                if (item.ArtistID == artistID)
+                {
+                    var show = new Show()
+                    {
+                        ShowID = item.ShowID,
+                        VenueID = item.Show.VenueID
+                    };
+                   
+                    listOfShows.Add(show);
+                }
+            }
+            return listOfShows;
+
         }
     }
 }

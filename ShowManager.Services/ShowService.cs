@@ -22,6 +22,7 @@ namespace ShowManager.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                var artists = new List<Artist>();
                 var query = ctx.Shows.Select(e => new ShowListItem
                 {
                     ShowID = e.ShowID,
@@ -31,7 +32,7 @@ namespace ShowManager.Services
                     VenueName = e.Venue.VenueName,
                     VenueType = e.Venue.VenueType,
                     Location = e.Venue.Location,
-
+                    ListOfArtist = artists
 
                 });
                 return query.ToList();

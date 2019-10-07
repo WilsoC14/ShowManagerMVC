@@ -42,7 +42,7 @@ namespace ShowManager.Controllers
                 return View(model);
 
             }
-            VenueService service = CreateNewVenueService();
+            VenueService service = NewVenueService();
 
             if (service.CreateVenue(model))
             {
@@ -58,7 +58,7 @@ namespace ShowManager.Controllers
         //Get: Edit
         public ActionResult Edit(int id)
         {
-            var service = CreateNewVenueService();
+            var service = NewVenueService();
             var detail = service.GetVenueByID(id);
             var model = new VenueEdit
             {
@@ -85,7 +85,7 @@ namespace ShowManager.Controllers
                 return View(model);
             }
 
-            var service = CreateNewVenueService();
+            var service = NewVenueService();
             if (service.UpdateVenue(model))
             {
                 TempData["SaveResult"] = "Your note was updated.";
@@ -100,7 +100,7 @@ namespace ShowManager.Controllers
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var service = CreateNewVenueService();
+            var service = NewVenueService();
             var model = service.GetVenueByID(id);
             return View(model);
         }
@@ -111,7 +111,7 @@ namespace ShowManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateNewVenueService();
+            var service = NewVenueService();
             service.DeleteVenue(id);
             TempData["SaveResult"] = "Your venue was deleted";
             return RedirectToAction("Index");
@@ -121,7 +121,7 @@ namespace ShowManager.Controllers
         //Details
         public ActionResult Details(int id)
         {
-            var service = CreateNewVenueService();
+            var service = NewVenueService();
             var model = service.GetVenueByID(id);
             return View(model);
         }
@@ -131,7 +131,7 @@ namespace ShowManager.Controllers
 
 
 
-        private VenueService CreateNewVenueService()
+        private VenueService NewVenueService()
         {
            // var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new VenueService();

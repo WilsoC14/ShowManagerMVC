@@ -31,6 +31,16 @@
             @Html.DisplayFor(model => model.Location)
         </dd>
 
+        <dt>
+            History of Shows
+        </dt>
+        @foreach(var show in Model.ListOfShows)
+        {
+            <dd>
+                @show.ShowName
+            </dd>
+          
+        }
     </dl>
 </div>
 <p>

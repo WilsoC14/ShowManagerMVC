@@ -33,7 +33,7 @@ namespace ShowManager.Services
 
         }
 
-        
+
 
         public bool AddArtistShowDataToDataTable(AddArtistToShowModel model)
         {
@@ -51,23 +51,23 @@ namespace ShowManager.Services
             }
         }
 
-        //public IEnumerable<ArtistShowDataListItem> GetArtistShowData()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query = ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
-        //        {
-        //            ArtistShowDataID = e.ArtistShowDataID,
-        //            ArtistID = e.ArtistID,
-        //            Artist = e.Artist,
-        //            ShowID = e.ShowID,
-        //            Show = e.Show
-        //        });
-        //        return query.ToList();
+        public IEnumerable<ArtistShowDataListItem> GetArtistShowData()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
+                {
+                    ArtistShowDataID = e.ArtistShowDataID,
+                    ArtistID = e.ArtistID,
+                    Artist = e.Artist,
+                    ShowID = e.ShowID,
+                    Show = e.Show
+                });
+                return query.ToList();
+            }
 
 
-        //    }
-        //}
+        }
 
         //public IEnumerable<ArtistShowDataListItem> GetList_ArtistShowData_By_ShowID(int showID)
         //{
@@ -87,19 +87,19 @@ namespace ShowManager.Services
 
 
 
-            //{
-                //var entity = ctx.ArtistShowDatas.Select(e => e.ShowID == showID);
-                //{
-                //    ArtistShowDataID = entity.ArtistShowDataID,
-                //    ArtistID = entity.ArtistID,
-                //    ShowID = entity.ShowID,
-                //};
+        //{
+        //var entity = ctx.ArtistShowDatas.Select(e => e.ShowID == showID);
+        //{
+        //    ArtistShowDataID = entity.ArtistShowDataID,
+        //    ArtistID = entity.ArtistID,
+        //    ShowID = entity.ShowID,
+        //};
 
 
         //    }
         //}
 
-      //  public bool UpdateArtistShowData(ArtistShowDataEdit model)
+        //  public bool UpdateArtistShowData(ArtistShowDataEdit model)
         //{
         //    using (var ctx = new ApplicationDbContext())
         //    {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShowManager.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,5 +30,6 @@ namespace ShowManager.Models
 
         //public Data.Artist Artist { get; set; }
         public string HeadLiningArtist { get; set; }
+        public List<Artist> ListOfArtist { get; set; }
     }
 }

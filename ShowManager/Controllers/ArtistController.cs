@@ -38,7 +38,7 @@ namespace ShowManager.Controllers
                 return View(model);
 
             }
-           var service =CreateArtistService();
+           var service =NewArtistService();
             
 
             if (service.CreateArtist(model))
@@ -56,7 +56,7 @@ namespace ShowManager.Controllers
         
             public ActionResult Edit (int id)
         {
-            var service = CreateArtistService();
+            var service = NewArtistService();
             var artist = service.GetArtistByID(id);
             var model =
                         new ArtistEdit
@@ -83,7 +83,7 @@ namespace ShowManager.Controllers
                 return View(model);
             }
 
-            var service = CreateArtistService();
+            var service = NewArtistService();
             if (service.UpdateArtist(model))
             {
                 TempData["SaveResult"] = "Your note was updated.";
@@ -98,7 +98,7 @@ namespace ShowManager.Controllers
         [ActionName("Delete")]
         public ActionResult Delete (int id)
         {
-            var service = CreateArtistService();
+            var service = NewArtistService();
             var model = service.GetArtistByID(id);
             return View(model);
         }
@@ -109,7 +109,7 @@ namespace ShowManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateArtistService();
+            var service = NewArtistService();
             service.DeleteArtist(id);
             TempData["SaveResult"] = "Your Artist was deleted";
             return RedirectToAction("Index");
@@ -118,18 +118,37 @@ namespace ShowManager.Controllers
         //Details
         public ActionResult Details(int id)
         {
-            var service = CreateArtistService();
-            var model = service.GetArtistByID(id);
+            var artistService = NewArtistService();
+            var model = artistService.GetArtistByID(id);
+            
             return View(model);
         }
 
+       
 
-        private ArtistService CreateArtistService()
+
+
+
+
+        private ArtistService NewArtistService()
         {
           //  var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ArtistService();
             return service;
 
         }
+
+        private VenueService NewVenueService()
+        {
+            // var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new VenueService();
+            return service;
+        }
+        private ArtistShowDataService NewArtistShowDataService()
+        {
+            var artistShowDataService = new ArtistShowDataService();
+            return artistShowDataService;
+        }
     }
+
 }
