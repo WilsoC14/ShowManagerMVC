@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShowManager.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,10 @@ namespace ShowManager.Models
         
         public string VenueName { get; set; }
         
-        public Data.VenueType VenueType { get; set; }
+        public VenueType VenueType { get; set; }
         
         public string Location { get; set; }
+
+        public List<Show> ListOfShows { get; set; }
     }
 }

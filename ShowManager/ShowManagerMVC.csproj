@@ -255,7 +255,7 @@
     <Content Include="Views\Venue\Details.cshtml" />
     <Content Include="Views\ArtistShowData\AddExistingArtistToExistingShow.cshtml" />
     <Content Include="Views\Show\AddArtistToShow.cshtml" />
-    <Content Include="Views\Show\CreateFromVenueIndex.cshtml" />
+    <Content Include="Views\Show\CreateShowFromVenueIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

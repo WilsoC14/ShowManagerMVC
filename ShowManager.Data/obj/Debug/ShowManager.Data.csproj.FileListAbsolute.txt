@@ -19,3 +19,5 @@ C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Deb
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Removed_Unnecessary_Properties_From_ShowObject.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Commented_Out_IsHeadliner.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_ICollection_to_ShowClass.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_VirtualList_to_VenueDataClass.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.ChangedICollection_PropertyInName.resources

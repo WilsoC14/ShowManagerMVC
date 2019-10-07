@@ -24,7 +24,7 @@ namespace ShowManager.Controllers
             return View(model);
         }
 
-        public ActionResult CreateFromVenueIndex(int id)
+        public ActionResult CreateShowFromVenueIndex(int id)
         {
             var service = NewVenueService();
             var venue = service.GetVenueByID(id);

@@ -41,7 +41,7 @@
         @Html.DisplayFor(modelItem => item.Location)
     </td>
     <td>
-        @Html.ActionLink("Add Show", "CreateFromVenueIndex", "Show", new { id = item.VenueID}, null) |
+        @Html.ActionLink("Add Show", "CreateShowFromVenueIndex", "Show", new { id = item.VenueID}, null) |
         @Html.ActionLink("Edit", "Edit", new { id = item.VenueID }) |
         @Html.ActionLink("Details", "Details", new { id = item.VenueID }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.VenueID })

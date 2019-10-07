@@ -87,12 +87,18 @@ namespace ShowManager.Services
             using (var ctx = new ApplicationDbContext())
 
             { var entity = ctx.Venues.Single(e => e.VenueID == id);
+                var shows = new List<Show>();
+                foreach (var artistShowData in entity.Shows)
+                {
+                    shows.Add(artistShowData);
+                }
                 return new VenueDetail
                 {
                     VenueID = entity.VenueID,
                     VenueName = entity.VenueName,
                     VenueType = entity.VenueType,
-                    Location = entity.Location
+                    Location = entity.Location,
+                    ListOfShows = shows
                 };
                 }
 

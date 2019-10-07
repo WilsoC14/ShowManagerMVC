@@ -126,6 +126,11 @@ namespace ShowManager.Controllers
             return View(model);
         }
 
+        
+
+
+
+
         private VenueService CreateNewVenueService()
         {
            // var userID = Guid.Parse(User.Identity.GetUserId());

@@ -42,7 +42,15 @@
             @Html.DisplayFor(model => model.VenueType)
         </dd>
 
-
+        <dt>
+            Shows at Venue
+        </dt>
+        @foreach( var show in Model.ListOfShows)
+        {
+            <dd>
+                @show.ShowName
+            </dd>
+        }
     </dl>
 </div>
 <p>

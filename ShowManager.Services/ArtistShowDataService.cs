@@ -51,43 +51,43 @@ namespace ShowManager.Services
             }
         }
 
-        public IEnumerable<ArtistShowDataListItem> GetArtistShowData()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query = ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
-                {
-                    ArtistShowDataID = e.ArtistShowDataID,
-                    ArtistID = e.ArtistID,
-                    Artist = e.Artist,
-                    ShowID = e.ShowID,
-                    Show = e.Show
-                });
-                return query.ToList();
+        //public IEnumerable<ArtistShowDataListItem> GetArtistShowData()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query = ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
+        //        {
+        //            ArtistShowDataID = e.ArtistShowDataID,
+        //            ArtistID = e.ArtistID,
+        //            Artist = e.Artist,
+        //            ShowID = e.ShowID,
+        //            Show = e.Show
+        //        });
+        //        return query.ToList();
 
 
-            }
-        }
+        //    }
+        //}
 
-        public IEnumerable<ArtistShowDataListItem> GetList_ArtistShowData_By_ShowID(int showID)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
+        //public IEnumerable<ArtistShowDataListItem> GetList_ArtistShowData_By_ShowID(int showID)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
 
-                var query =ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
-                    {
-                        ArtistShowDataID = e.ArtistShowDataID,
-                        ArtistID = e.ArtistID,
-                        ShowID = e.ShowID
-                });
-                return query.ToList();
+        //        var query =ctx.ArtistShowDatas.Select(e => new ArtistShowDataListItem
+        //            {
+        //                ArtistShowDataID = e.ArtistShowDataID,
+        //                ArtistID = e.ArtistID,
+        //                ShowID = e.ShowID
+        //        });
+        //        return query.ToList();
 
-            }
-
-
+        //    }
 
 
-            {
+
+
+            //{
                 //var entity = ctx.ArtistShowDatas.Select(e => e.ShowID == showID);
                 //{
                 //    ArtistShowDataID = entity.ArtistShowDataID,
@@ -96,24 +96,24 @@ namespace ShowManager.Services
                 //};
 
 
-            }
-        }
+        //    }
+        //}
 
-        public bool UpdateArtistShowData(ArtistShowDataEdit model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.ArtistShowDatas.Single(e => e.ArtistShowDataID == model.ArtistShowDataID);
-                entity.ArtistID = model.ArtistID;
+      //  public bool UpdateArtistShowData(ArtistShowDataEdit model)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx.ArtistShowDatas.Single(e => e.ArtistShowDataID == model.ArtistShowDataID);
+        //        entity.ArtistID = model.ArtistID;
 
-                entity.ShowID = model.ShowID;
+        //        entity.ShowID = model.ShowID;
 
 
-                return ctx.SaveChanges() == 1;
+        //        return ctx.SaveChanges() == 1;
 
-            }
+        //    }
 
-        }
+        //}
         public bool DeleteArtistShowData(int id)
         {
             using (var ctx = new ApplicationDbContext())

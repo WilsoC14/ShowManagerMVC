@@ -20,5 +20,6 @@ namespace ShowManager.Data
         public VenueType VenueType { get; set; }
         [Required]
         public string Location { get; set; }
+        public virtual ICollection<Show> Shows { get; set; }
     }
 }
