@@ -111,6 +111,8 @@ namespace ShowManager.Services
         //Helper
         public ArtistDetail GetArtistByID(int id)
         {
+            var venuesPlayed = new List<VenueDetail>();
+            var venueService = new VenueService();
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -118,87 +120,89 @@ namespace ShowManager.Services
                         .Artists
                         .Single(e => e.ArtistID == id);
 
-                var listOfShows = ShowsPlayedToShowDetail(id);
-
+                var listOfShowsPlayed = GetShowDetailsArtistHasPlayed(id);
+                
+                foreach (var show in listOfShowsPlayed)
+                {
+                    var venueToAdd = venueService.GetVenueByID(show.VenueID);                    venuesPlayed.Add(venueToAdd);
+                }
 
                 var artist = new ArtistDetail
                 {
                     ArtistID = entity.ArtistID,
                     ArtistName = entity.ArtistName,
                     Location = entity.Location,
-                    ListOfShows = listOfShows,
+                    ListOfShows = listOfShowsPlayed,
+                    VenuesPlayed = venuesPlayed
                 };
                 artist.ArtistCommunity = GetArtistCommunity(artist);
                 return artist;
             };
             // artist.ArtistCommunity = GetArtistCommunity(artist);
         }
-    
 
 
-    public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
-    {
-        var showService = new ShowService();
-        var listOfShowDetail = new List<ShowDetail>();
-        var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
-        foreach (var item in listOfShowIDs)
+
+        //public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
+        //{
+        //    var showService = new ShowService();
+        //    var listOfShowDetail = new List<ShowDetail>();
+        //    var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
+        //    foreach (var item in listOfShowIDs)
+        //    {
+        //        var detail = showService.GetShowByID(item.ShowID);
+        //        listOfShowDetail.Add(detail);
+        //    }
+        //    return listOfShowDetail;
+
+        //}
+
+
+
+        public List<ShowDetail> GetShowDetailsArtistHasPlayed(int artistID)
         {
-            var detail = showService.GetShowByID(item.ShowID);
-            listOfShowDetail.Add(detail);
-        }
-        return listOfShowDetail;
-
-    }
-
-
-
-    public List<Show> GetShowIDsArtistHasPlayed(int artistID)
-    {
-        var asdService = new ArtistShowDataService();
-        var showService = new ShowService();
-        var listOfShows = new List<Show>();
-        var ListOfArtistShowData = asdService.GetArtistShowData();
-        foreach (var item in ListOfArtistShowData)
-        {
-            if (item.ArtistID == artistID)
+            var showService = new ShowService();
+            var asdService = new ArtistShowDataService();
+            // var showService = new ShowService();
+            var listOfShows = new List<ShowDetail>();
+            var ListOfArtistShowData = asdService.GetArtistShowData();
+            foreach (var item in ListOfArtistShowData)
             {
-                var show = new Show()
+                if (item.ArtistID == artistID)
                 {
-                    ShowID = item.ShowID,
-                    VenueID = item.Show.VenueID
-                };
+                    var show = showService.GetShowByID(item.ShowID);
 
-                listOfShows.Add(show);
-            }
-        }
-        return listOfShows;
-
-    }
-
-    public List<ArtistListItem> GetArtistCommunity(ArtistDetail baseArtist) //int id
-    {
-            var artistCommunity = new List<ArtistListItem>();
-        // get artistShowData where artistShowData.ShowID == show.ShowID in artist.ListOfShows
-        //var artistCommunity = new List<ArtistListItem>();
-        foreach (var show in baseArtist.ListOfShows)
-        {
-            foreach (var artist in show.ListOfArtist)
-            {
-                if (artist.ArtistID != baseArtist.ArtistID)
-                {
-                    var artistListItem = new ArtistListItem()
-                    {
-                        ArtistID = artist.ArtistID,
-                        ArtistName = artist.ArtistName,
-                        Location = artist.Location
-                    };
-                    artistCommunity.Add(artistListItem);
+                    listOfShows.Add(show);
                 }
             }
+            return listOfShows;
+
         }
-        return artistCommunity;
+
+        public List<ArtistListItem> GetArtistCommunity(ArtistDetail baseArtist) //int id
+        {
+            var artistCommunity = new List<ArtistListItem>();
+            // get artistShowData where artistShowData.ShowID == show.ShowID in artist.ListOfShows
+            //var artistCommunity = new List<ArtistListItem>();
+            foreach (var show in baseArtist.ListOfShows)
+            {
+                foreach (var artist in show.ListOfArtist)
+                {
+                    if (artist.ArtistID != baseArtist.ArtistID)
+                    {
+                        var artistListItem = new ArtistListItem()
+                        {
+                            ArtistID = artist.ArtistID,
+                            ArtistName = artist.ArtistName,
+                            Location = artist.Location
+                        };
+                        artistCommunity.Add(artistListItem);
+                    }
+                }
+            }
+            return artistCommunity;
+        }
     }
-} 
 }
 
 

@@ -32,17 +32,6 @@
         </dd>
 
         <dt>
-            History of Shows
-        </dt>
-        @foreach(var show in Model.ListOfShows)
-        {
-            <dd>
-                @show.ShowName
-            </dd>
-          
-        }
-        
-        <dt>
             Artist's Community
         </dt>
         @foreach(var artist in Model.ArtistCommunity)
@@ -51,7 +40,25 @@
                 @artist.ArtistName
             </dd>
         }
-
+        <dt>
+            History of Shows
+        </dt>
+        @foreach(var show in Model.ListOfShows)
+        {
+            <dd>
+                @show.ShowName
+            </dd>       
+        }
+        
+        <dt>
+            Venues Played
+        </dt>
+        @foreach(var venue in Model.VenuesPlayed)
+        {
+            <dd>
+                @venue.VenueName
+            </dd>
+        }
     </dl>
 
    
