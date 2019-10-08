@@ -10,7 +10,7 @@ namespace ShowManager.Services
 {
     public class ArtistService
     {
-      //  private readonly Guid _userID;
+        //  private readonly Guid _userID;
         //public ArtistService(Guid userID)
         //{
         //    _userID = userID;
@@ -24,7 +24,7 @@ namespace ShowManager.Services
         {
             var entity = new Artist()
             {
-             //   UserID = _userID,
+                //   UserID = _userID,
                 ArtistName = model.ArtistName,
                 Location = model.Location
             };
@@ -52,7 +52,7 @@ namespace ShowManager.Services
         }
 
         //cruD
-        
+
         public bool DeleteArtist(int artistId)  //User Role... don't think _userID is needed
                                                 // maybe it is needed so that only that user or admin can delete
         {
@@ -74,7 +74,7 @@ namespace ShowManager.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.Artists
-         // don't need userID because any user should be able to view all artists. also need all artists to use dropdown list in "AddArtistToShow"                    //  .Where(e => e.UserID == _userID)
+                               // don't need userID because any user should be able to view all artists. also need all artists to use dropdown list in "AddArtistToShow"                    //  .Where(e => e.UserID == _userID)
                                .Select(
                                    e => new ArtistListItem
                                    {
@@ -120,67 +120,85 @@ namespace ShowManager.Services
 
                 var listOfShows = ShowsPlayedToShowDetail(id);
 
-                return  
-                    new ArtistDetail
-                    {
-                        ArtistID = entity.ArtistID,
-                        ArtistName = entity.ArtistName,
-                        Location = entity.Location,
-                        ListOfShows = listOfShows
-                       
-                    };
-            }
-        }
 
-        //Get Venues Artist has played at
-        //public List<VenueDetail> GetVenuesArtistHasPlayed(int artistID)
-        //{
-        //    var listOfShows = GetShowsArtistHasPlayed(artistID);
-        //    var venueService = new VenueService();
-        //    var listOfVenueDetail = new List<VenueDetail>();
-
-        //    foreach(var item in listOfShows)
-
-        
-
-        public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
-        {
-            var showService = new ShowService();
-            var listOfShowDetail = new List<ShowDetail>();
-            var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
-            foreach(var item in listOfShowIDs)
-            {
-                var detail = showService.GetShowByID(item.ShowID);   
-                listOfShowDetail.Add(detail);
-            }
-            return listOfShowDetail;
-
-        }
-        
-        
-        public List<Show> GetShowIDsArtistHasPlayed(int artistID)
-        {
-            var asdService = new ArtistShowDataService();
-            var showService = new ShowService();
-            var listOfShows = new List<Show>();
-            var ListOfArtistShowData = asdService.GetArtistShowData();
-            foreach(var item in ListOfArtistShowData)
-            {
-                if (item.ArtistID == artistID)
+                var artist = new ArtistDetail
                 {
-                    var show = new Show()
+                    ArtistID = entity.ArtistID,
+                    ArtistName = entity.ArtistName,
+                    Location = entity.Location,
+                    ListOfShows = listOfShows,
+                };
+                artist.ArtistCommunity = GetArtistCommunity(artist);
+                return artist;
+            };
+            // artist.ArtistCommunity = GetArtistCommunity(artist);
+        }
+    
+
+
+    public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
+    {
+        var showService = new ShowService();
+        var listOfShowDetail = new List<ShowDetail>();
+        var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
+        foreach (var item in listOfShowIDs)
+        {
+            var detail = showService.GetShowByID(item.ShowID);
+            listOfShowDetail.Add(detail);
+        }
+        return listOfShowDetail;
+
+    }
+
+
+
+    public List<Show> GetShowIDsArtistHasPlayed(int artistID)
+    {
+        var asdService = new ArtistShowDataService();
+        var showService = new ShowService();
+        var listOfShows = new List<Show>();
+        var ListOfArtistShowData = asdService.GetArtistShowData();
+        foreach (var item in ListOfArtistShowData)
+        {
+            if (item.ArtistID == artistID)
+            {
+                var show = new Show()
+                {
+                    ShowID = item.ShowID,
+                    VenueID = item.Show.VenueID
+                };
+
+                listOfShows.Add(show);
+            }
+        }
+        return listOfShows;
+
+    }
+
+    public List<ArtistListItem> GetArtistCommunity(ArtistDetail baseArtist) //int id
+    {
+            var artistCommunity = new List<ArtistListItem>();
+        // get artistShowData where artistShowData.ShowID == show.ShowID in artist.ListOfShows
+        //var artistCommunity = new List<ArtistListItem>();
+        foreach (var show in baseArtist.ListOfShows)
+        {
+            foreach (var artist in show.ListOfArtist)
+            {
+                if (artist.ArtistID != baseArtist.ArtistID)
+                {
+                    var artistListItem = new ArtistListItem()
                     {
-                        ShowID = item.ShowID,
-                        VenueID = item.Show.VenueID
+                        ArtistID = artist.ArtistID,
+                        ArtistName = artist.ArtistName,
+                        Location = artist.Location
                     };
-                   
-                    listOfShows.Add(show);
+                    artistCommunity.Add(artistListItem);
                 }
             }
-            return listOfShows;
-
         }
+        return artistCommunity;
     }
+} 
 }
 
 

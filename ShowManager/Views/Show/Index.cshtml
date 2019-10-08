@@ -22,9 +22,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Location)
         </th> 
-        <th>
-            @Html.DisplayNameFor(model => model.HeadLiningArtist)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -41,9 +39,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Location)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HeadLiningArtist)
-        </td>
+        
 
         <td>
             @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = item.ShowID }) |

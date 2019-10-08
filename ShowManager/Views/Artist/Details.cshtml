@@ -41,7 +41,20 @@
             </dd>
           
         }
+        
+        <dt>
+            Artist's Community
+        </dt>
+        @foreach(var artist in Model.ArtistCommunity)
+        {
+            <dd>
+                @artist.ArtistName
+            </dd>
+        }
+
     </dl>
+
+   
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistID }) |
