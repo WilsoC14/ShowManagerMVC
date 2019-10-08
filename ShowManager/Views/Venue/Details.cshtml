@@ -50,8 +50,17 @@
             <dd>
                 @show.ShowName
                 
+            </dd>        
+        }
+
+        <dt>
+            Artist Community
+        </dt>
+        @foreach(var artist in Model.ArtistCommunity)
+        {
+            <dd>
+                @artist.ArtistName
             </dd>
-           
         }
     </dl>
 </div>

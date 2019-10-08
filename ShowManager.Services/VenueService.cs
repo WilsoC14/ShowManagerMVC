@@ -10,12 +10,12 @@ namespace ShowManager.Services
 {
     public class VenueService
     {
-   //     private readonly Guid _userID;
+        //     private readonly Guid _userID;
         //public VenueService(Guid userID)
         //{
         //    _userID = userID;
         //}
-        public VenueService ()
+        public VenueService()
         { }
 
         //Crud
@@ -23,7 +23,7 @@ namespace ShowManager.Services
         {
             var entity = new Venue()
             {
-              //  UserID = _userID,
+                //  UserID = _userID,
                 VenueName = model.VenueName,
                 VenueType = model.VenueType,
                 Location = model.Location
@@ -42,14 +42,14 @@ namespace ShowManager.Services
         {
             using (var ctx = new ApplicationDbContext())
             {                           //Add e.OwnerID == _userID so only venue user or admin can delete after adding user roles
-                var entity = ctx.Venues.Single(e => e.VenueID == model.VenueID) ;
+                var entity = ctx.Venues.Single(e => e.VenueID == model.VenueID);
                 entity.VenueName = model.VenueName;
                 entity.VenueType = model.VenueType;
                 entity.Location = model.Location;
 
                 return ctx.SaveChanges() == 1;
 
-                    }
+            }
         }
 
         //cruD
@@ -84,13 +84,26 @@ namespace ShowManager.Services
         //Helper
         public VenueDetail GetVenueByID(int id)
         {
+            var venuesCommunity = new List<ArtistListItem>();
+            var showService = new ShowService();
             using (var ctx = new ApplicationDbContext())
-
-            { var entity = ctx.Venues.Single(e => e.VenueID == id);
-                var shows = new List<Show>();
-                foreach (var artistShowData in entity.Shows)
+            {
+                var entity = ctx.Venues.Single(e => e.VenueID == id);
+                var listOfShowDetailModels = new List<ShowDetail>();     // something weird here with using Shows rather than showDetail
+                foreach (var show in entity.Shows)
                 {
-                    shows.Add(artistShowData);
+                    var showToAdd = showService.GetShowByID(show.ShowID);
+                    foreach (var artist in showToAdd.ListOfArtist)
+                    {
+                        var artistToAdd = new ArtistListItem()
+                        {
+                            ArtistID = artist.ArtistID,
+                            ArtistName = artist.ArtistName,
+                            Location = artist.Location
+                        };
+                        venuesCommunity.Add(artistToAdd);
+                    }
+                    listOfShowDetailModels.Add(showToAdd);
                 }
                 return new VenueDetail
                 {
@@ -98,12 +111,15 @@ namespace ShowManager.Services
                     VenueName = entity.VenueName,
                     VenueType = entity.VenueType,
                     Location = entity.Location,
-                    ListOfShows = shows
+                    ListOfShows = listOfShowDetailModels,
+                    ArtistCommunity = venuesCommunity
                 };
-                }
+            }
+        }
 
-                
-}
+
+
+
 
     }
 }

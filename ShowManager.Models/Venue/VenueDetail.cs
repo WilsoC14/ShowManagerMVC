@@ -17,6 +17,7 @@ namespace ShowManager.Models
         
         public string Location { get; set; }
 
-        public List<Show> ListOfShows { get; set; }
+        public List<ShowDetail> ListOfShows { get; set; }
+        public List<ArtistListItem> ArtistCommunity { get; set; }
     }
 }
