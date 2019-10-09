@@ -20,6 +20,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.DateOfShow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfShow)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.VenueName)
         </dt>
 
@@ -34,14 +42,15 @@
         <dd>
             @Html.DisplayFor(model => model.Location)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.HeadLiningArtist)
+            Artists on Bill
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HeadLiningArtist)
-        </dd>
+        @foreach (var artist in Model.ListOfArtist)
+        {
+            <dd>
+                @artist.ArtistName
+            </dd>
+        }
 
     </dl>
 

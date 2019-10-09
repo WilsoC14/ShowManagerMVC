@@ -11,23 +11,21 @@ namespace ShowManager.Models
 {
     public class ShowDetail
     {
-        
-        public int ShowID { get; set; }
 
+        public int ShowID { get; set; }
         [Required]
         public string ShowName { get; set; }
 
         [Required]
         public int VenueID { get; set; }
         public string VenueName { get; set; }
-
         public string Location { get; set; }
         public VenueType VenueType { get; set; }
+        public Venue Venue { get; set; }
 
-       public Venue Venue { get; set; }
-
-        public string HeadLiningArtist { get; set; }
+        public DateTime DateOfShow { get; set; }
 
         public List<Artist> ListOfArtist { get; set; }
+     //   public string HeadLiningArtist { get; set; }
     }
 }

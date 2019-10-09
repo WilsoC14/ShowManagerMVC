@@ -24,6 +24,6 @@ namespace ShowManager.Data
         public virtual Artist Artist { get; set; }
 
 
-  //      public bool IsHeadLiner { get; set; }
+      //  public bool IsHeadLiner { get; set; }
     }
 }

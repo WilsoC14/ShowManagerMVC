@@ -21,3 +21,6 @@ C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Deb
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_ICollection_to_ShowClass.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_VirtualList_to_VenueDataClass.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.ChangedICollection_PropertyInName.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.RemovedHeadliner_from_Show_and_ArtistShowData.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_DateTime_to_Show.resources

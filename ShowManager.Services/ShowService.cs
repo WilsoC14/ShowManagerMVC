@@ -58,6 +58,7 @@ namespace ShowManager.Services
                     VenueName = entity.Venue.VenueName,
                     VenueType = entity.Venue.VenueType,
                     Location = entity.Venue.Location,
+                   // HeadLiningArtist = entity.HeadLiningArtist,
                     ListOfArtist = artists
                 };
             }
@@ -80,6 +81,7 @@ namespace ShowManager.Services
 
         public bool UpdateShow(ShowEdit model)
         {
+            var artistService = new ArtistService();
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Shows.Single(e => e.ShowID == model.ShowID);
@@ -87,6 +89,7 @@ namespace ShowManager.Services
                 entity.ShowName = model.ShowName;
                 //need if statement to query database and see if a Show with that Name Exists. Drop Down Window won't work because you're changing the name of a show to one that doesn't exist.
                 entity.VenueID = model.VenueID;
+              //  entity.HeadLiningArtist = model.HeadLiningArtist;
                 // need code for adding an Artist through ArtistShowData
 
                 return ctx.SaveChanges() == 1;

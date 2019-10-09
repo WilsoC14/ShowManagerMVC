@@ -21,8 +21,8 @@ namespace ShowManager.Data
         public int VenueID { get; set; }
         public virtual Venue Venue { get; set; }
 
-        public string HeadLiningArtist { get; set; }
-
+      //  public string HeadLiningArtist { get; set; }
+        public DateTime DateOfShow { get; set; }
         public virtual ICollection<ArtistShowData> ArtistShowData { get; set; }
     }
 }

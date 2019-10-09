@@ -67,8 +67,8 @@ namespace ShowManager.Controllers
         //Get: Edit
         public ActionResult Edit(int id)
         {
-            var service = NewShowService();
-            var detail = service.GetShowByID(id);
+            var showService = NewShowService();
+            var detail = showService.GetShowByID(id);
             var model = new ShowEdit
             {
                 ShowID = detail.ShowID,
@@ -78,10 +78,16 @@ namespace ShowManager.Controllers
                 VenueName = detail.Venue.VenueName,
                 VenueType = detail.Venue.VenueType,
                 Location = detail.Venue.Location,
+                DateOfShow = detail.DateOfShow,
+                ListOfArtist = detail.ListOfArtist
 
             };
             var venueService = NewVenueService();
             ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
+            var showDetail = showService.GetShowByID(model.ShowID);
+            {
+                //    ViewBag.HeadLiningArtist = new SelectList(showDetail.ListOfArtist, "ArtistName", "ArtistName");
+            }
             return View(model);
         }
 
@@ -89,7 +95,7 @@ namespace ShowManager.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ShowEdit model)
-        {
+        {   //Needs DateTime Functionality
             var venueService = NewVenueService();
             if (!ModelState.IsValid)
             {
@@ -139,7 +145,7 @@ namespace ShowManager.Controllers
 
         //Details
         public ActionResult Details(int id)
-        {
+        {   //needs DateTime in view
             var service = NewShowService();
             var model = service.GetShowByID(id);
             return View(model);
@@ -149,7 +155,7 @@ namespace ShowManager.Controllers
 
         //Get Add ArtistShowData to Show
         public ActionResult AddArtistToShow(int showID)
-        {
+        {   //needs DateTime in view
           
             var artistShowDataService = NewArtistShowDataService();
             var model = artistShowDataService.GetAddArtistToShowModel(showID);
@@ -180,56 +186,25 @@ namespace ShowManager.Controllers
             else
                 ModelState.AddModelError("", "Artist could not be added");
             return View(model);
-
-
-           // if(NewArtistShowDataService().)
-
-           // bool artistAdded = artistShowDataService.PostAddArtistToShowModel(artistID, model);
-            //if (artistAdded == true && artistID == model.ArtistID)
-            //{
-            //    artistShowDataService.AddArtistShowDataToDataTable(model);
-            //    TempData["SaveResult"] = "Artist added to Show.";
-            //    return View(model);
-            //}
-            //else
-            //    ModelState.AddModelError("", "Artist could not be added to show");
-            //return View(model);
         }
-
-           
-
-
-            //var artistShowDataService = NewArtistShowDataService();
-            //artistShowDataService.AddArtistIDToArtistShowDataCreate(artistID, model);
-
-        
-
-
-
-
         private ShowService NewShowService()
         {
           //  var userID = Guid.Parse(User.Identity.GetUserId());
             var showService = new ShowService();
             return showService;
         }
-        //remove Guid functionality
         private VenueService NewVenueService()
-        {
-            
+        {      
                 //var userID = Guid.Parse(User.Identity.GetUserId());
                 var venueService = new VenueService();
-                return venueService;
-            
+                return venueService;           
         }
         private ArtistService NewArtistService()
         {
             //  var userID = Guid.Parse(User.Identity.GetUserId());
             var artistService = new ArtistService();
             return artistService;
-
         }
-
         private ArtistShowDataService NewArtistShowDataService()
         {
             var artistShowDataService = new ArtistShowDataService();

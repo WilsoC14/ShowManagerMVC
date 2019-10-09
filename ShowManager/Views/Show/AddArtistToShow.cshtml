@@ -15,9 +15,9 @@
     <h4>AddArtistToShowModel</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-   
+
     @Html.HiddenFor(model => model.ShowID)
- 
+
 
     <div class="form-group">
         @Html.LabelFor(model => model.ShowName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -28,12 +28,21 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.DateOfShow, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DateOfShow, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateOfShow, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.VenueName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DisplayFor(model => model.VenueName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.VenueName, "", new { @class = "text-danger" })
         </div>
     </div>
+
 
 
     <div class="form-group">

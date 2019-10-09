@@ -81,6 +81,18 @@
     <Compile Include="Migrations\201910051633097_ChangedICollection_PropertyInName.Designer.cs">
       <DependentUpon>201910051633097_ChangedICollection_PropertyInName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910082145265_IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.cs" />
+    <Compile Include="Migrations\201910082145265_IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.Designer.cs">
+      <DependentUpon>201910082145265_IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910091834167_RemovedHeadliner_from_Show_and_ArtistShowData.cs" />
+    <Compile Include="Migrations\201910091834167_RemovedHeadliner_from_Show_and_ArtistShowData.Designer.cs">
+      <DependentUpon>201910091834167_RemovedHeadliner_from_Show_and_ArtistShowData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910091840531_Added_DateTime_to_Show.cs" />
+    <Compile Include="Migrations\201910091840531_Added_DateTime_to_Show.Designer.cs">
+      <DependentUpon>201910091840531_Added_DateTime_to_Show.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
@@ -108,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910051633097_ChangedICollection_PropertyInName.resx">
       <DependentUpon>201910051633097_ChangedICollection_PropertyInName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910082145265_IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.resx">
+      <DependentUpon>201910082145265_IsHeadliner_bool_inArtistShowData_and_HeadliningArtist_string_inShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910091834167_RemovedHeadliner_from_Show_and_ArtistShowData.resx">
+      <DependentUpon>201910091834167_RemovedHeadliner_from_Show_and_ArtistShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910091840531_Added_DateTime_to_Show.resx">
+      <DependentUpon>201910091840531_Added_DateTime_to_Show.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

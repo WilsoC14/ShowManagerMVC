@@ -16,7 +16,7 @@ namespace ShowManager.Models.ArtistShowData
         public int ShowID { get; set; }  
         public string ShowName { get; set; }
         public string VenueName { get; set; }
-
+        public DateTime DateOfShow { get; set; }
 
 
       //  public bool IsHeadLiner { get; set; }

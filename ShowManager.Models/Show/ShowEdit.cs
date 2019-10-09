@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShowManager.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,12 +24,9 @@ namespace ShowManager.Models
         public Data.VenueType VenueType { get; set; }
 
         public Data.Venue Venue { get; set; }
-        //[Required]
-        //[ForeignKey("Artist")]
-        //public string ArtistName { get; set; }
-        //public int ArtistID { get; set; }
-
-        //public Data.Artist Artist { get; set; }
-        public string HeadLiningArtist { get; set; }
+      
+      //  public string HeadLiningArtist { get; set; }
+      public DateTime DateOfShow { get; set; }
+        public List<Artist> ListOfArtist { get; set; }
     }
 }

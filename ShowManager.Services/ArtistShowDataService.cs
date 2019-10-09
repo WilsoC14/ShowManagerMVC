@@ -65,8 +65,6 @@ namespace ShowManager.Services
                 });
                 return query.ToList();
             }
-
-
         }
 
         //public IEnumerable<ArtistShowDataListItem> GetList_ArtistShowData_By_ShowID(int showID)
