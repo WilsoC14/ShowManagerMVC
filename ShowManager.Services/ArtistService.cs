@@ -141,24 +141,6 @@ namespace ShowManager.Services
             // artist.ArtistCommunity = GetArtistCommunity(artist);
         }
 
-
-
-        //public List<ShowDetail> ShowsPlayedToShowDetail(int artistID)
-        //{
-        //    var showService = new ShowService();
-        //    var listOfShowDetail = new List<ShowDetail>();
-        //    var listOfShowIDs = GetShowIDsArtistHasPlayed(artistID);
-        //    foreach (var item in listOfShowIDs)
-        //    {
-        //        var detail = showService.GetShowByID(item.ShowID);
-        //        listOfShowDetail.Add(detail);
-        //    }
-        //    return listOfShowDetail;
-
-        //}
-
-
-
         public List<ShowDetail> GetShowDetailsArtistHasPlayed(int artistID)
         {
             var showService = new ShowService();
@@ -183,7 +165,7 @@ namespace ShowManager.Services
         {
             var artistCommunity = new List<ArtistListItem>();
             // get artistShowData where artistShowData.ShowID == show.ShowID in artist.ListOfShows
-            //var artistCommunity = new List<ArtistListItem>();
+          
             foreach (var show in baseArtist.ListOfShows)
             {
                 foreach (var artist in show.ListOfArtist)

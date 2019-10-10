@@ -69,6 +69,7 @@ namespace ShowManager.Services
             {
                 ShowName = model.ShowName,
                 VenueID = model.VenueID,
+                DateOfShow = model.DateOfShow
             };
 
             using (var ctx = new ApplicationDbContext())
