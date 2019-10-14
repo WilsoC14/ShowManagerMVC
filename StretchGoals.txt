@@ -1,11 +1,13 @@
-Add List of members to Artists class for multiple person artists
+2.0 stretchgoal - Add List of members to Artists class for multiple person artists
 
-Look for "Did you mean this" code for mispelled artists/Venues/Shows
+2.0 stretchgoal - Look for "Did you mean this" code for mispelled artists/Venues/Shows
 
-Location Based Venue Selection>Choose from Location from dropdown list, then choose Venue within that location in a dropdown list.
+2.0 stretchgoal - Location Based Venue Selection>Choose from Location from dropdown list, then choose Venue within that location in a dropdown list.
 
-"Create New ..." buttons for venues, artists, shows that don't exist yet.
+In Progress - "Create New ..." buttons for venues, artists, shows that don't exist yet.
 
-Maybe use Radio Buttons to add artists to a show
+1.0 stretch goal - Maybe use Radio Buttons to add artists to a show
 
-create a View for adding artists to a show... comes after selecting a venue for a show.
+Complete - create a View for adding artists to a show... comes after selecting a venue for a show.
+
+Next Upcoming Show for artist in index/detail views

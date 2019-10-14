@@ -4,58 +4,57 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>ShowDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<div class="container col-md-8 col-md-offset-2 detail-block">
+    <div class="row">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShowName)
-        </dt>
+        <div class="headline">
+            <h2 id="showName">
+                @Html.DisplayFor(model => model.ShowName)
+            </h2>
+            <hr />
+            <h4 id="venueName">
+                @Html.DisplayFor(model => model.VenueName)
+            </h4>
+            <h6>
+                @Html.DisplayFor(model => model.DateOfShow)
+            </h6>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <h4>Artist Line Up</h4>
+            <ul id="artist_lineup">
+                @foreach (var artist in Model.ListOfArtist)
+                {
+                    <li class="artist_lineup_item">
+                        @artist.ArtistName
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <h4 id="venue_header">Venue Details</h4>
+            <ul id="venue-details">
+                <li>
+                    @Html.DisplayFor(model => model.VenueName)
+                </li>
+                <li>
+                    @Html.DisplayFor(model => model.Location)
+                </li>
+                <li>
+                    @Html.DisplayFor(model => model.VenueType)
+                </li>
 
-        <dd>
-            @Html.DisplayFor(model => model.ShowName)
-        </dd>
+            </ul>
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VenueName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfShow)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateOfShow)
-        </dd>
-
-        <dt>
-            Artists on Bill
-        </dt>
-        @foreach( var artist in Model.ListOfArtist)
-        {
-            <dd>
-                @artist.ArtistName
-            </dd>
-        }
-    </dl>
+        </div>
+    </div>
+    <div class="row">
+        <p class="action-links">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ShowID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.ShowID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<br />

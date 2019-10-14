@@ -2,16 +2,14 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(/Content/Asset/concert-lights.jpg);
-    background-repeat: no-repeat;
     background-size: 100% auto;
-
+    background-repeat:no-repeat;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-   
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -41,22 +39,94 @@ textarea {
     color: #555555;
     background-color: #fff;
     background-image: none;
-    
     border-radius: 4px;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
 }
+
 .jumbotron {
     background-color: #F2EC99;
     border-style: solid;
     border-width: 1.5em;
     border-color: #26010B;
-    
 }
+
 .navbar {
     background-color: #26010B;
 }
 
 .btn {
     background-color: #730220;
+}
+
+/* Footer Styling*/
+.footer-text {
+    text-align: center;
+    color: #C9DBE7;
+}
+
+.table {
+    background-color: #F2EC99;
+    border-style: solid;
+    border-width: .5em;
+    border-color: #170006;
+    border-radius: 2px;
+    text-align: center;
+    color: #33010E;
+    font-weight: bold;
+}
+    .table th {
+        background-color: #33010E;
+        text-align: center;
+        color: #C9DBE7;
+        font-size: 18px;
+    }
+.table td {
+        border-top: solid !important;
+        border-top-color: #33010E !important;
+    }
+
+a {
+    color: #BF0426;
+    font-weight: bold;
+}
+
+h2 {
+    color: #C9DBE7;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+
+/* Show Details View*/
+
+
+.detail-block {
+    margin-top: 6em;
+    background-color: #F2EC99;
+    border-style: solid;
+    border-color: #26010B;
+    border-width: 1em;
+    border-radius: 2em;
+}
+.headline {
+    font-weight: bold;
+    text-align: center;
+}
+#showName {
+    color: black;
+    font-weight: bold;
+}
+ul{
+    list-style:none;
+}
+
+.action-links{
+    text-align: center;
+}
+
+#venue_header{
+    text-align: center;
 }
 
