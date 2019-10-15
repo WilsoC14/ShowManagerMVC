@@ -3,68 +3,61 @@
 @{
     ViewBag.Title = "Details";
 }
+@Html.HiddenFor(model => model.VenueID)
 
-<h2>Details</h2>
-
-<div>
-    <h4>VenueDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VenueID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueName)
-        </dt>
-
-        <dd>
+<div class="container col-md-8 col-md-offset-2 detail-block">
+    <div class="headline">
+        <h2 id="showName">
             @Html.DisplayFor(model => model.VenueName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueType)
-        </dt>
-
-        <dd>
+        </h2>
+    </div>
+    <div class="row " id="venue_details">
+        <div class="col-md-4 col-md-offset-2">
+            
+                <b>
+                    Located In:
+                </b>
+                @Html.DisplayFor(model => model.Location)
+        </div>
+        <div class="col-md-4">
+            <b>
+                Type of Venue:
+            </b>
             @Html.DisplayFor(model => model.VenueType)
-        </dd>
+            
+        </div>
+    
+    </div> <!--end of row-->
+    <hr />
+    <div class="row">
+        <div class="table_block col-md-4 col-md-offset-2" id="show_history">
+            <h4>Show History</h4>
+            <ul id="show_history">
+                @foreach (var show in Model.ListOfShows)
+                {
+                    <li>
+                        @show.ShowName
+                    </li>
+                }
 
-        <dt>
-            Shows at Venue
-        </dt>
-        @foreach( var show in Model.ListOfShows)
-        {
-            <dd>
-                @show.ShowName
-                
-            </dd>        
-        }
+            </ul>
+        </div>
 
-        <dt>
-            Artist Community
-        </dt>
-        @foreach(var artist in Model.ArtistCommunity)
-        {
-            <dd>
-                @artist.ArtistName
-            </dd>
-        }
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.VenueID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <div class="table_block col-md-4 " id="artist_community">
+            <h4>Artist Community</h4>
+            <ul class="data_list" id="artist_community">
+                @foreach (var artist in Model.ArtistCommunity)
+                {
+                    <li class="col-md-offset-3 list_item">
+                        @artist.ArtistName
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <p class="action-links">
+        @Html.ActionLink("Add Show", "CreateShowFromVenueIndex", "Show", new { id = Model.VenueID }, null) |
+        @Html.ActionLink("Edit Venue", "Edit", new { id = Model.VenueID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div> <!-- closing tag for detail-block-->

@@ -22,10 +22,10 @@
         </div>
         <div class="col-md-3 col-md-offset-2">
             <h4>Artist Line Up</h4>
-            <ul id="artist_lineup">
+            <ul class="data_list">
                 @foreach (var artist in Model.ListOfArtist)
                 {
-                    <li class="artist_lineup_item">
+                    <li class="list_item">
                         @artist.ArtistName
                     </li>
                 }
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-4 col-md-offset-2">
             <h4 id="venue_header">Venue Details</h4>
-            <ul id="venue-details">
+            <ul class="data_list" id="venue_details">
              
                 <li>
                     @Html.DisplayFor(model => model.Location)
