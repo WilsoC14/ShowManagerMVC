@@ -6,9 +6,7 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 
 <table class="table">
     <tr>
@@ -18,7 +16,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Location)
         </th>
-        <th></th>
+        <th>
+            @Html.ActionLink("Create New Artist", "Create", null, new { id = "create_actionLink" })
+        </th>
     </tr>
 
     @foreach (var item in Model)

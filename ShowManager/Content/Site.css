@@ -102,7 +102,9 @@ h2 {
 h4 {
     font-weight: bold;
 }
-
+#create_actionLink {
+    color: #F2EC99;
+}
 
 /* Show Details View*/
 

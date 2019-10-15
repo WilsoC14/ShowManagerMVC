@@ -7,7 +7,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    
+    
+
 </p>
 <table class="table">
     <tr>
@@ -25,7 +27,9 @@
             @Html.DisplayNameFor(model => model.Location)
         </th> 
        
-        <th></th>
+        <th>
+            @Html.ActionLink("Create New Show", "Create", null, new { id = "create_actionLink"})
+        </th>
     </tr>
 
 @foreach (var item in Model) {

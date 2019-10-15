@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ShowManager.Models
         public string ShowName { get; set; }
         //[ForeignKey("Venue")]
         public int VenueID { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DateOfShow { get; set; }
 
 
