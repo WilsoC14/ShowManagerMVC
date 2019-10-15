@@ -65,7 +65,9 @@ namespace ShowManager.Controllers
                 VenueID = detail.VenueID,
                 VenueName = detail.VenueName,
                 VenueType = detail.VenueType,
-                Location = detail.Location
+                Location = detail.Location,
+                ListOfShows = detail.ListOfShows
+                
             };
             return View(model);
         }

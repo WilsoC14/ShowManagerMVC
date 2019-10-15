@@ -17,5 +17,6 @@ namespace ShowManager.Models
         public Data.VenueType VenueType { get; set; }
 
         public string Location { get; set; }
+        public List<ShowDetail> ListOfShows { get; set; }
     }
 }
