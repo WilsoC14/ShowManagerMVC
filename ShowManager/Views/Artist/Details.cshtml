@@ -4,66 +4,59 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ArtistDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-          
-        @Html.HiddenFor(model => model.ArtistID)
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </dt>
-
-        <dd>
+@Html.HiddenFor(model => model.ArtistID)
+<div class="container col-md-8 col-md-offset-2 detail-block">
+    <div class="headline">
+        <h2 id="objectName">
             @Html.DisplayFor(model => model.ArtistName)
-        </dd>
-   
+        </h2>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="table_block col-md-4">
+            <h4> Artist Community</h4>
+            <ul class="data_list">
+                @foreach (var artist in Model.ArtistCommunity)
+                {
+                    <li>
+                        @artist.ArtistName
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="table_block col-md-4">
+            <h4> History of Shows</h4>
+            <ul class="data_list">
+                @foreach (var show in Model.ListOfShows)
+                {
+                    <li>
+                        @show.ShowName
+                    </li>
+                }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
+            </ul>
+        </div>
+        <div class="table_block col-md-4">
+            <h4> Venues Played</h4>
+            <ul class="data_list">
+                @foreach (var venue in Model.VenuesPlayed)
+                {
+                    <li>
+                        @venue.VenueName
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
 
-        <dt>
-            Artist's Community
-        </dt>
-        @foreach(var artist in Model.ArtistCommunity)
-        {
-            <dd>
-                @artist.ArtistName
-            </dd>
-        }
-        <dt>
-            History of Shows
-        </dt>
-        @foreach(var show in Model.ListOfShows)
-        {
-            <dd>
-                @show.ShowName
-            </dd>       
-        }
-        
-        <dt>
-            Venues Played
-        </dt>
-        @foreach(var venue in Model.VenuesPlayed)
-        {
-            <dd>
-                @venue.VenueName
-            </dd>
-        }
-    </dl>
-
-   
-</div>
-<p>
+<p class="action-links">
     @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+</div> <!-- closing tag for detail-block-->
+<div>
+
+
+</div>
