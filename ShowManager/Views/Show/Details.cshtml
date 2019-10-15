@@ -29,19 +29,20 @@
                         @artist.ArtistName
                     </li>
                 }
-            </ul>
+            </ul>          
         </div>
-        <div class="col-md-3 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-2">
             <h4 id="venue_header">Venue Details</h4>
             <ul id="venue-details">
-                <li>
-                    @Html.DisplayFor(model => model.VenueName)
-                </li>
+             
                 <li>
                     @Html.DisplayFor(model => model.Location)
                 </li>
                 <li>
-                    @Html.DisplayFor(model => model.VenueType)
+                    @Html.DisplayFor(model => model.VenueType) Venue
+                </li>
+                <li>
+                    link to venue details page
                 </li>
 
             </ul>
@@ -51,6 +52,7 @@
     </div>
     <div class="row">
         <p class="action-links">
+            @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = Model.ShowID }) |
             @Html.ActionLink("Edit", "Edit", new { id = Model.ShowID }) |
             @Html.ActionLink("Back to List", "Index")
         </p>

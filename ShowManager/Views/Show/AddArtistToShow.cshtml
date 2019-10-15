@@ -4,59 +4,69 @@
     ViewBag.Title = "AddArtistToShow";
 }
 
-<h2>AddArtistToShow</h2>
+<h2>Add an Artist to Line-Up</h2>
+
+        <hr />
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
-    <h4>AddArtistToShowModel</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="detail-block col-md-8 col-md-offset-2">
 
-    @Html.HiddenFor(model => model.ShowID)
+    <div class="form-horizontal">
 
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ShowName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.ShowName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ShowName, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ShowID)
+
+        <div class="headline">
+            <h2 id="showName">
+                @Html.DisplayFor(model => model.ShowName)
+            </h2>
+            <hr />
+            <h4 id="venueName">
+                @Html.DisplayFor(model => model.VenueName)
+            </h4>
+            <h6>
+                @Html.DisplayFor(model => model.DateOfShow)
+            </h6>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1" id="addArtist-dropdown">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ArtistID, "Artist", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-7 ">
+                        @Html.DropDownList("ArtistID", null, " Choose Artist ", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ArtistID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-offset-2">
+                <h4>Artist Line Up</h4>
+                <ul id="artist_lineup">
+                    @foreach (var artist in Model.ListOfArtist)
+                    {
+                        <li class="artist_lineup_item">
+                            @artist.ArtistName
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-group" id="submit_btns">
+            <div class="col-md-12">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DateOfShow, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DateOfShow, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DateOfShow, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.VenueName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.VenueName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.VenueName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArtistID, "Artist", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("ArtistID", null, " Choose Artist ", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ArtistID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Add Artist" class="btn btn-default" />
-        </div>
+    <div class="row action-links">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ShowID }) |
+        @Html.ActionLink("Back to Detail", "Details", new { id = Model.ShowID }) |
+        @Html.ActionLink("Back to List", "Index")
     </div>
 </div>
 }

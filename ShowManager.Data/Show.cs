@@ -24,5 +24,7 @@ namespace ShowManager.Data
       //  public string HeadLiningArtist { get; set; }
         public DateTime DateOfShow { get; set; }
         public virtual ICollection<ArtistShowData> ArtistShowData { get; set; }
+  
+       
     }
 }

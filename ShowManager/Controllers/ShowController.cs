@@ -83,7 +83,8 @@ namespace ShowManager.Controllers
 
             };
             var venueService = NewVenueService();
-            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
+            
+            ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName", model.VenueID);
             var showDetail = showService.GetShowByID(model.ShowID);
             {
                 //    ViewBag.HeadLiningArtist = new SelectList(showDetail.ListOfArtist, "ArtistName", "ArtistName");
@@ -113,7 +114,8 @@ namespace ShowManager.Controllers
             if (service.UpdateShow(model))
             {
                 TempData["SaveResult"] = "Your show was updated.";
-                return RedirectToAction("Index");
+                ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
+                return RedirectToAction("Edit", id);
             }
 
             ViewBag.VenueID = new SelectList(venueService.GetVenues(), "VenueID", "VenueName");
@@ -155,9 +157,8 @@ namespace ShowManager.Controllers
 
         //Get Add ArtistShowData to Show
         public ActionResult AddArtistToShow(int showID)
-        {   //needs DateTime in view
-          
-            var artistShowDataService = NewArtistShowDataService();
+        {   //needs DateTime in view           
+            var artistShowDataService = NewArtistShowDataService();       
             var model = artistShowDataService.GetAddArtistToShowModel(showID);
             //not sure about view
             ViewBag.ArtistID = new SelectList(NewArtistService().GetArtists(), "ArtistID", "ArtistName");

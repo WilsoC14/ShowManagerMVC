@@ -93,6 +93,22 @@
     <Compile Include="Migrations\201910091840531_Added_DateTime_to_Show.Designer.cs">
       <DependentUpon>201910091840531_Added_DateTime_to_Show.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910142229388_Added_Virtual_ListOfArtists_toShow_DataClass.cs" />
+    <Compile Include="Migrations\201910142229388_Added_Virtual_ListOfArtists_toShow_DataClass.Designer.cs">
+      <DependentUpon>201910142229388_Added_Virtual_ListOfArtists_toShow_DataClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910142308366_Removed_propertyFrom_previousMigration.cs" />
+    <Compile Include="Migrations\201910142308366_Removed_propertyFrom_previousMigration.Designer.cs">
+      <DependentUpon>201910142308366_Removed_propertyFrom_previousMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910142340186_Added_ListOfArtist_toShowData.cs" />
+    <Compile Include="Migrations\201910142340186_Added_ListOfArtist_toShowData.Designer.cs">
+      <DependentUpon>201910142340186_Added_ListOfArtist_toShowData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910142345084_Removed_propertyFrom_previousMigrationAGAIN.cs" />
+    <Compile Include="Migrations\201910142345084_Removed_propertyFrom_previousMigrationAGAIN.Designer.cs">
+      <DependentUpon>201910142345084_Removed_propertyFrom_previousMigrationAGAIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show.cs" />
@@ -129,6 +145,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910091840531_Added_DateTime_to_Show.resx">
       <DependentUpon>201910091840531_Added_DateTime_to_Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910142229388_Added_Virtual_ListOfArtists_toShow_DataClass.resx">
+      <DependentUpon>201910142229388_Added_Virtual_ListOfArtists_toShow_DataClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910142308366_Removed_propertyFrom_previousMigration.resx">
+      <DependentUpon>201910142308366_Removed_propertyFrom_previousMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910142340186_Added_ListOfArtist_toShowData.resx">
+      <DependentUpon>201910142340186_Added_ListOfArtist_toShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910142345084_Removed_propertyFrom_previousMigrationAGAIN.resx">
+      <DependentUpon>201910142345084_Removed_propertyFrom_previousMigrationAGAIN.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

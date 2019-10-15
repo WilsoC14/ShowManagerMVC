@@ -17,20 +17,15 @@ namespace ShowManager.Services
         public AddArtistToShowModel GetAddArtistToShowModel(int showID)
         {
             // takes in a show ID from clicking "add artist" button on detail or list view and an empty model
-
-
-            using (var ctx = new ApplicationDbContext())
+            var showService = new ShowService();
+            var showDetail = showService.GetShowByID(showID);
+            return new AddArtistToShowModel()
             {
-                var entity = ctx.Shows.Single(e => e.ShowID == showID);
-                return new AddArtistToShowModel()
-                {
-                    ShowID = entity.ShowID,
-                    ShowName = entity.ShowName,
-                    VenueName = entity.Venue.VenueName,
-
-                };
-            }
-
+                ShowID = showDetail.ShowID,
+                ShowName = showDetail.ShowName,
+                VenueName = showDetail.Venue.VenueName,
+                ListOfArtist = showDetail.ListOfArtist
+            };
         }
 
 
