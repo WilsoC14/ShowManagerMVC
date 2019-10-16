@@ -2,8 +2,9 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(/Content/Asset/concert-lights.jpg);
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+    background-size: 100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
     color: #26010B;
 }
 
@@ -170,4 +171,13 @@ ul{
 }
 .table_block h4{
     text-align: center;
+}
+
+
+#line-up-header{
+    text-align: center;
+}
+
+#detail-block-padding{
+    margin-top: 3em;
 }

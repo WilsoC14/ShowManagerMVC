@@ -48,9 +48,9 @@
             <ul class="data_list" id="artist_community">
                 @foreach (var artist in Model.ArtistCommunity)
                 {
-                    <li class="col-md-offset-3 list_item">
-                        @artist.ArtistName
-                    </li>
+                <li class=" col-md-offset-3 list_item">
+                    @Html.ActionLink(artist.ArtistName, "Details", "Artist", new { id = artist.ArtistID }, new { @class = "action-links" })
+                </li>
                 }
             </ul>
         </div>

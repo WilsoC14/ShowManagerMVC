@@ -20,30 +20,30 @@
                 @Html.DisplayFor(model => model.DateOfShow)
             </h6>
         </div>
-        <div class="col-md-3 col-md-offset-2">
-            <h4>Artist Line Up</h4>
-            <ul class="data_list">
+        <div class="col-md-4 col-md-offset-2">
+            <h4 class="col-md-offset-1">Artist Line Up</h4>
+            <ul class="data_list col-md-10">
                 @foreach (var artist in Model.ListOfArtist)
                 {
-                    <li class="list_item">
-                        @artist.ArtistName
-                    </li>
+                <li class="list_item">
+                    
+                    @Html.ActionLink(artist.ArtistName, "Details","Artist", new { id = artist.ArtistID }, new { @class = "action-links"})
+                    
+                </li>
                 }
             </ul>          
         </div>
-        <div class="col-md-4 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-0">
             <h4 id="venue_header">Venue Details</h4>
-            <ul class="data_list" id="venue_details_inShow">
+            <ul class="data_list"  id="venue_details_inShow">
              
                 <li>
-                    @Html.DisplayFor(model => model.Location)
+                   <b>Location:</b> @Html.DisplayFor(model => model.Location)
                 </li>
                 <li>
-                    @Html.DisplayFor(model => model.VenueType) Venue
+                   <b>Venue Type:</b> @Html.DisplayFor(model => model.VenueType)
                 </li>
-                <li>
-                    link to venue details page
-                </li>
+               
 
             </ul>
 
@@ -53,6 +53,7 @@
     <div class="row">
         <p class="action-links">
             @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = Model.ShowID }) |
+                    @Html.ActionLink("Venue Details", "Details", "Venue", new { id = Model.VenueID }, null) |
             @Html.ActionLink("Edit", "Edit", new { id = Model.ShowID }) |
             @Html.ActionLink("Back to List", "Index")
         </p>

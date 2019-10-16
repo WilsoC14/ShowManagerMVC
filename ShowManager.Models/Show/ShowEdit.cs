@@ -24,9 +24,11 @@ namespace ShowManager.Models
         public Data.VenueType VenueType { get; set; }
 
         public Data.Venue Venue { get; set; }
-      
-      //  public string HeadLiningArtist { get; set; }
-      public DateTime DateOfShow { get; set; }
+
+        //  public string HeadLiningArtist { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DateOfShow { get; set; }
         public List<Artist> ListOfArtist { get; set; }
     }
 }

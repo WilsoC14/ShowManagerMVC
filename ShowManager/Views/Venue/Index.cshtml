@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br/>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VenueID)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.VenueName)
         </th>
@@ -21,26 +22,27 @@
             @Html.ActionLink("Create New Venue", "Create", null, new { id = "create_actionLink" })
         </th>
     </tr>
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.VenueID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.VenueName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.VenueType)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Location)
-    </td>
-    <td>
-        @Html.ActionLink("Add Show", "CreateShowFromVenueIndex", "Show", new { id = item.VenueID}, null) |
-        @Html.ActionLink("Edit", "Edit", new { id = item.VenueID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.VenueID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.VenueID })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            @Html.HiddenFor(modelItem => item.VenueID)
+
+            <td>
+                @Html.DisplayFor(modelItem => item.VenueName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VenueType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Add Show", "CreateShowFromVenueIndex", "Show", new { id = item.VenueID }, null) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.VenueID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VenueID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VenueID })
+            </td>
+        </tr>
+    }
 </table>

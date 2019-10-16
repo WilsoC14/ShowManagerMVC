@@ -22,7 +22,7 @@ namespace ShowManager.Models
         public string Location { get; set; }
         public VenueType VenueType { get; set; }
         public Venue Venue { get; set; }
-
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}",ApplyFormatInEditMode =true)]
         public DateTime DateOfShow { get; set; }
 
         public List<Artist> ListOfArtist { get; set; }
