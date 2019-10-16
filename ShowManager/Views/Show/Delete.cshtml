@@ -4,62 +4,62 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+    <div class="container col-md-8 col-md-offset-2 detail-block">
+        <div class="row">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ShowDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShowName)
-        </dt>
+            <div class="headline">
+                <h1>Would You Like To Delete This Show?</h1>
+                
+                <h2 id="objectName">
+                    @Html.DisplayFor(model => model.ShowName)
+                </h2>
+                <hr />
+                <h4 id="venueName">
+                    @Html.DisplayFor(model => model.VenueName)
+                </h4>
+                <h6>
+                    @Html.DisplayFor(model => model.DateOfShow)
+                </h6>
+            </div>
+            <div class="col-md-3 col-md-offset-2">
+                <h4>Artist Line Up</h4>
+                <ul class="data_list">
+                    @foreach (var artist in Model.ListOfArtist)
+                    {
+                        <li class="list_item">
+                            @artist.ArtistName
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <h4 id="venue_header">Venue Details</h4>
+                <ul class="data_list" id="venue_details_inShow">
 
-        <dd>
-            @Html.DisplayFor(model => model.ShowName)
-        </dd>
+                    <li>
+                        @Html.DisplayFor(model => model.Location)
+                    </li>
+                    <li>
+                        @Html.DisplayFor(model => model.VenueType) Venue
+                    </li>
+                    <li>
+                        link to venue details page
+                    </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfShow)
-        </dt>
+                </ul>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfShow)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueName)
-        </dt>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.VenueName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-        <dt>
-            Artists on Bill
-        </dt>
-        @foreach (var artist in Model.ListOfArtist)
+        @using (Html.BeginForm())
         {
-            <dd>
-                @artist.ArtistName
-            </dd>
-        }
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
+            @Html.AntiForgeryToken()
+    <div class="action-links">
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
-    }
-</div>
+    </div>
+        }
+    </div>
