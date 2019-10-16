@@ -115,18 +115,25 @@ namespace ShowManager.Services
             var venueService = new VenueService();
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Artists
-                        .Single(e => e.ArtistID == id);
-
-                var listOfShowsPlayed = GetShowDetailsArtistHasPlayed(id);
+                var entity =ctx.Artists.Single(e => e.ArtistID == id);
+               //var listOfShowsPlayed = entity.ArtistShowData.Select(s => new ShowDetail
+               // {
+               //    ShowID = s.ShowID,
+               //    ShowName = s.Show.ShowName,
+               //    VenueID = s.Show.VenueID,
+               //    Venue = s.Show.Venue,
+               //    VenueName = s.Show.Venue.VenueName,
+               //    VenueType = s.Show.Venue.VenueType,
+               //    Location = s.Show.Venue.Location,
+               //    DateOfShow = s.Show.DateOfShow
+               //});
                 
+              var listOfShowsPlayed = GetShowDetailsArtistHasPlayed(id);
                 foreach (var show in listOfShowsPlayed)
                 {
-                    var venueToAdd = venueService.GetVenueByID(show.VenueID);                    venuesPlayed.Add(venueToAdd);
+                    var venueToAdd = venueService.GetVenueByID(show.VenueID);
+                    venuesPlayed.Add(venueToAdd);
                 }
-
                 var artist = new ArtistDetail
                 {
                     ArtistID = entity.ArtistID,

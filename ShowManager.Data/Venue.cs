@@ -11,7 +11,7 @@ namespace ShowManager.Data
    public class Venue
     {
         
-        public Guid UserID { get; set; }
+       // public Guid UserID { get; set; }
         [Key]
        public int VenueID { get; set; }
         [Required]

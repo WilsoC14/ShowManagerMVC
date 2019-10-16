@@ -28,3 +28,4 @@ C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Deb
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Removed_propertyFrom_previousMigration.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Added_ListOfArtist_toShowData.resources
 C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.Removed_propertyFrom_previousMigrationAGAIN.resources
+C:\ElevenFifty Projects\DotNetCohort\DotNet\ShowManager\ShowManager.Data\obj\Debug\ShowManager.Data.Migrations.addmigrationCommented_Out_Unused_Properties_inDataClasses.resources

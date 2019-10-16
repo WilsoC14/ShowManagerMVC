@@ -3,59 +3,50 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    
-    
-
-</p>
 <table class="table">
     <tr>
-       
+
         <th>
             @Html.DisplayNameFor(model => model.ShowName)
         </th>
-       <th>
-           @Html.DisplayNameFor(model => model.DateOfShow)
-       </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfShow)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.VenueName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Location)
-        </th> 
-       
+        </th>
+
         <th>
-            @Html.ActionLink("Create New Show", "Create", null, new { id = "create_actionLink"})
+            @Html.ActionLink("Create New Show", "Create", null, new { id = "create_actionLink" })
         </th>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-@foreach (var item in Model) {
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.ShowName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfShow)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VenueName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfShow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VenueName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
 
-        <td>
-            @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = item.ShowID }) |
-            @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
-        </td>
-    </tr>
-}
 
+            <td>
+                @Html.ActionLink("Add Artist", "AddArtistToShow", new { showID = item.ShowID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
+            </td>
+        </tr>
+    }
 </table>

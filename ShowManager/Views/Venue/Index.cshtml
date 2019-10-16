@@ -3,10 +3,6 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-
 <table class="table">
     <tr>
         <th>
@@ -25,7 +21,6 @@
             @Html.ActionLink("Create New Venue", "Create", null, new { id = "create_actionLink" })
         </th>
     </tr>
-
 @foreach (var item in Model) {
 <tr>
     <td>
@@ -48,5 +43,4 @@
     </td>
 </tr>
 }
-
 </table>
